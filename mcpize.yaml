@@ -1,0 +1,75 @@
+# MCPize Configuration
+# Docs: https://mcpize.com/docs/mcpize-yaml
+
+version: 1
+
+name: "tensorflow-social-mcp"
+slug: "socialpulse-ai"
+
+runtime: typescript
+entry: "index.js"
+
+build:
+  install: "npm install"
+  command: "npm run build"
+
+start:
+  type: stdio
+  command: "npx tensorflow-social-mcp"
+
+bridge:
+  mode: stdio
+
+credentials:
+  - name: "YOUTUBE_API_KEY"
+    description: "Matches secret pattern (*_KEY, *_TOKEN, etc.)"
+  - name: "BLUESKY_HANDLE"
+    description: "No default value detected"
+  - name: "BLUESKY_APP_PASSWORD"
+    description: "Matches secret pattern (*_KEY, *_TOKEN, etc.)"
+  - name: "DISCORD_BOT_TOKEN"
+    description: "Matches secret pattern (*_KEY, *_TOKEN, etc.)"
+  - name: "FACEBOOK_PAGE_ACCESS_TOKEN"
+    description: "Matches secret pattern (*_KEY, *_TOKEN, etc.)"
+  - name: "FACEBOOK_PAGE_ID"
+    description: "No default value detected"
+  - name: "FACEBOOK_AD_ACCOUNT_ID"
+    description: "No default value detected"
+  - name: "GITHUB_TOKEN"
+    description: "Matches secret pattern (*_KEY, *_TOKEN, etc.)"
+  - name: "INSTAGRAM_ACCESS_TOKEN"
+    description: "Matches secret pattern (*_KEY, *_TOKEN, etc.)"
+  - name: "INSTAGRAM_BUSINESS_ACCOUNT_ID"
+    description: "No default value detected"
+  - name: "LINKEDIN_ACCESS_TOKEN"
+    description: "Matches secret pattern (*_KEY, *_TOKEN, etc.)"
+  - name: "LINKEDIN_PERSON_URN"
+    description: "No default value detected"
+  - name: "OPENAI_API_KEY"
+    description: "Matches secret pattern (*_KEY, *_TOKEN, etc.); Has fallback value (|| or ??); Required by installed npm package"
+  - name: "MASTODON_INSTANCE_URL"
+    description: "No default value detected"
+  - name: "MASTODON_ACCESS_TOKEN"
+    description: "Matches secret pattern (*_KEY, *_TOKEN, etc.)"
+  - name: "PINTEREST_ACCESS_TOKEN"
+    description: "Matches secret pattern (*_KEY, *_TOKEN, etc.)"
+  - name: "REDDIT_CLIENT_ID"
+    description: "No default value detected"
+  - name: "REDDIT_CLIENT_SECRET"
+    description: "Matches secret pattern (*_KEY, *_TOKEN, etc.)"
+  - name: "SPOTIFY_CLIENT_ID"
+    description: "No default value detected"
+  - name: "SPOTIFY_CLIENT_SECRET"
+    description: "Matches secret pattern (*_KEY, *_TOKEN, etc.)"
+  - name: "THREADS_ACCESS_TOKEN"
+    description: "Matches secret pattern (*_KEY, *_TOKEN, etc.)"
+  - name: "THREADS_USER_ID"
+    description: "No default value detected"
+  - name: "TIKTOK_CLIENT_KEY"
+    description: "Matches secret pattern (*_KEY, *_TOKEN, etc.)"
+  - name: "TIKTOK_CLIENT_SECRET"
+    description: "Matches secret pattern (*_KEY, *_TOKEN, etc.)"
+  - name: "TIKTOK_ACCESS_TOKEN"
+    description: "Matches secret pattern (*_KEY, *_TOKEN, etc.)"
+  - name: "REDIS_URL"
+    description: "Expected by installed npm package (not found in scanned code)"
