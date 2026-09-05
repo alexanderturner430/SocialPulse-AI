@@ -1,0 +1,48 @@
+    "SentimentResponse": {
+      "type": "object",
+      "properties": {
+        "score": { "type": "number" },
+        "sentiment": { "type": "string", "enum": ["positive", "negative", "neutral"] }
+      },
+      "required": ["score", "sentiment"]
+    },
+    "AnomalyDetectionResponse": {
+      "type": "object",
+      "properties": {
+        "value": { "type": "number" },
+        "isAnomaly": { "type": "boolean" },
+        "error": { "type": "number" }
+      },
+      "required": ["value", "isAnomaly"]
+    },
+    "TrendDetectionResponse": {
+      "type": "object",
+      "properties": {
+        "trend": { "type": "string" },
+        "averageChange": { "type": "number" }
+      },
+      "required": ["trend"]
+    },
+    "EngagementPredictionResponse": {
+      "type": "object",
+      "properties": {
+        "engagementScore": { "type": "number" }
+      },
+      "required": ["engagementScore"]
+    },
+    "KeywordExtractionResponse": {
+      "type": "object",
+      "properties": {
+        "term": { "type": "string" },
+        "score": { "type": "number" }
+      },
+      "required": ["term", "score"]
+    },
+    "ErrorResponse": {
+      "type": "object",
+      "properties": {
+        "error": { "type": "string" },
+        "code": { "type": "string" }
+      },
+      "required": ["error"]
+    },

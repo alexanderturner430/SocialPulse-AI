@@ -1,0 +1,3602 @@
+openapi: 3.0.0
+info:
+  title: TensorFlow.js Social Media MCP Server
+  version: 1.0.0
+paths:
+  /tools/analyze-image:
+    post:
+      summary: "Classify image content using MobileNet"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/analyze-image"
+      responses:
+        "200":
+          description: Successful response
+  /tools/detect-objects:
+    post:
+      summary: "Detect objects in image using COCO-SSD"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/detect-objects"
+      responses:
+        "200":
+          description: Successful response
+  /tools/detect-faces:
+    post:
+      summary: "Detect faces with age/gender/emotion analysis"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/detect-faces"
+      responses:
+        "200":
+          description: Successful response
+  /tools/classify-image:
+    post:
+      summary: "Classify image against custom labels"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/classify-image"
+      responses:
+        "200":
+          description: Successful response
+  /tools/analyze-text:
+    post:
+      summary: "Analyze text content with NLP"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/analyze-text"
+      responses:
+        "200":
+          description: Successful response
+  /tools/extract-keywords:
+    post:
+      summary: "Extract keywords from text using ML"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/extract-keywords"
+      responses:
+        "200":
+          description: Successful response
+  /tools/detect-sentiment:
+    post:
+      summary: "Analyze sentiment of text"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/detect-sentiment"
+      responses:
+        "200":
+          description: Successful response
+  /tools/detect-toxicity:
+    post:
+      summary: "Detect toxic/offensive language"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/detect-toxicity"
+      responses:
+        "200":
+          description: Successful response
+  /tools/embed-text:
+    post:
+      summary: "Generate text embeddings"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/embed-text"
+      responses:
+        "200":
+          description: Successful response
+  /tools/answer-question:
+    post:
+      summary: "Extractive QA from context"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/answer-question"
+      responses:
+        "200":
+          description: Successful response
+  /tools/predict-trend:
+    post:
+      summary: "Predict trend from data points"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/predict-trend"
+      responses:
+        "200":
+          description: Successful response
+  /tools/forecast-data:
+    post:
+      summary: "Forecast time series data"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/forecast-data"
+      responses:
+        "200":
+          description: Successful response
+  /tools/detect-anomalies:
+    post:
+      summary: "Detect anomalies in data"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/detect-anomalies"
+      responses:
+        "200":
+          description: Successful response
+  /tools/cluster-data:
+    post:
+      summary: "K-Means clustering"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/cluster-data"
+      responses:
+        "200":
+          description: Successful response
+  /tools/reduce-dimensions:
+    post:
+      summary: "PCA dimensionality reduction"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/reduce-dimensions"
+      responses:
+        "200":
+          description: Successful response
+  /tools/regression:
+    post:
+      summary: "Neural network regression"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/regression"
+      responses:
+        "200":
+          description: Successful response
+  /tools/train-model:
+    post:
+      summary: "Train a KNN model"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/train-model"
+      responses:
+        "200":
+          description: Successful response
+  /tools/ab-test:
+    post:
+      summary: "Statistical A/B test analysis"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/ab-test"
+      responses:
+        "200":
+          description: Successful response
+  /tools/analyze-youtube-thumbnails:
+    post:
+      summary: "Analyze channel thumbnails for engagement"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/analyze-youtube-thumbnails"
+      responses:
+        "200":
+          description: Successful response
+  /tools/classify-youtube-content:
+    post:
+      summary: "Classify video content types"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/classify-youtube-content"
+      responses:
+        "200":
+          description: Successful response
+  /tools/predict-youtube-views:
+    post:
+      summary: "Predict video views from features"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/predict-youtube-views"
+      responses:
+        "200":
+          description: Successful response
+  /tools/youtube-comment-sentiment:
+    post:
+      summary: "Sentiment analysis on comments"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/youtube-comment-sentiment"
+      responses:
+        "200":
+          description: Successful response
+  /tools/youtube-channel-keywords:
+    post:
+      summary: "Extract channel keywords"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/youtube-channel-keywords"
+      responses:
+        "200":
+          description: Successful response
+  /tools/youtube-trend-detection:
+    post:
+      summary: "Detect channel trends"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/youtube-trend-detection"
+      responses:
+        "200":
+          description: Successful response
+  /tools/youtube-forecast:
+    post:
+      summary: "Forecast channel growth"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/youtube-forecast"
+      responses:
+        "200":
+          description: Successful response
+  /tools/youtube-anomaly-detection:
+    post:
+      summary: "Detect view anomalies"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/youtube-anomaly-detection"
+      responses:
+        "200":
+          description: Successful response
+  /tools/youtube-thumbnail-comparison:
+    post:
+      summary: "Compare two thumbnails"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/youtube-thumbnail-comparison"
+      responses:
+        "200":
+          description: Successful response
+  /tools/youtube-topic-clustering:
+    post:
+      summary: "Cluster videos by topic"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/youtube-topic-clustering"
+      responses:
+        "200":
+          description: Successful response
+  /tools/analyze-instagram-images:
+    post:
+      summary: "Analyze post images"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/analyze-instagram-images"
+      responses:
+        "200":
+          description: Successful response
+  /tools/predict-instagram-engagement:
+    post:
+      summary: "Predict post engagement"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/predict-instagram-engagement"
+      responses:
+        "200":
+          description: Successful response
+  /tools/classify-instagram-content:
+    post:
+      summary: "Classify post content"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/classify-instagram-content"
+      responses:
+        "200":
+          description: Successful response
+  /tools/instagram-caption-sentiment:
+    post:
+      summary: "Caption sentiment analysis"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/instagram-caption-sentiment"
+      responses:
+        "200":
+          description: Successful response
+  /tools/instagram-hashtag-extraction:
+    post:
+      summary: "Extract hashtags"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/instagram-hashtag-extraction"
+      responses:
+        "200":
+          description: Successful response
+  /tools/instagram-visual-trends:
+    post:
+      summary: "Detect visual trends"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/instagram-visual-trends"
+      responses:
+        "200":
+          description: Successful response
+  /tools/instagram-follower-forecast:
+    post:
+      summary: "Forecast follower growth"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/instagram-follower-forecast"
+      responses:
+        "200":
+          description: Successful response
+  /tools/instagram-anomaly-detection:
+    post:
+      summary: "Detect engagement anomalies"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/instagram-anomaly-detection"
+      responses:
+        "200":
+          description: Successful response
+  /tools/instagram-post-comparison:
+    post:
+      summary: "Compare two post visuals"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/instagram-post-comparison"
+      responses:
+        "200":
+          description: Successful response
+  /tools/instagram-content-clustering:
+    post:
+      summary: "Cluster content themes"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/instagram-content-clustering"
+      responses:
+        "200":
+          description: Successful response
+  /tools/analyze-tiktok-thumbnails:
+    post:
+      summary: "Analyze video thumbnails"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/analyze-tiktok-thumbnails"
+      responses:
+        "200":
+          description: Successful response
+  /tools/predict-tiktok-virality:
+    post:
+      summary: "Predict video virality"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/predict-tiktok-virality"
+      responses:
+        "200":
+          description: Successful response
+  /tools/classify-tiktok-content:
+    post:
+      summary: "Classify video content"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/classify-tiktok-content"
+      responses:
+        "200":
+          description: Successful response
+  /tools/tiktok-content-sentiment:
+    post:
+      summary: "Content sentiment analysis"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/tiktok-content-sentiment"
+      responses:
+        "200":
+          description: Successful response
+  /tools/tiktok-trending-topics:
+    post:
+      summary: "Extract trending topics"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/tiktok-trending-topics"
+      responses:
+        "200":
+          description: Successful response
+  /tools/tiktok-view-patterns:
+    post:
+      summary: "Detect view patterns"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/tiktok-view-patterns"
+      responses:
+        "200":
+          description: Successful response
+  /tools/tiktok-follower-forecast:
+    post:
+      summary: "Forecast follower growth"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/tiktok-follower-forecast"
+      responses:
+        "200":
+          description: Successful response
+  /tools/tiktok-anomaly-detection:
+    post:
+      summary: "Detect engagement anomalies"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/tiktok-anomaly-detection"
+      responses:
+        "200":
+          description: Successful response
+  /tools/tiktok-thumbnail-comparison:
+    post:
+      summary: "Compare two thumbnails"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/tiktok-thumbnail-comparison"
+      responses:
+        "200":
+          description: Successful response
+  /tools/tiktok-content-clustering:
+    post:
+      summary: "Cluster video content"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/tiktok-content-clustering"
+      responses:
+        "200":
+          description: Successful response
+  /tools/twitter-content-keywords:
+    post:
+      summary: "Analyze tweet content keywords"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/twitter-content-keywords"
+      responses:
+        "200":
+          description: Successful response
+  /tools/predict-twitter-engagement:
+    post:
+      summary: "Predict tweet engagement"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/predict-twitter-engagement"
+      responses:
+        "200":
+          description: Successful response
+  /tools/classify-twitter-topics:
+    post:
+      summary: "Classify tweet topics"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/classify-twitter-topics"
+      responses:
+        "200":
+          description: Successful response
+  /tools/twitter-toxicity-detection:
+    post:
+      summary: "Detect toxic tweets"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/twitter-toxicity-detection"
+      responses:
+        "200":
+          description: Successful response
+  /tools/twitter-sentiment-analysis:
+    post:
+      summary: "Tweet sentiment analysis"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/twitter-sentiment-analysis"
+      responses:
+        "200":
+          description: Successful response
+  /tools/twitter-keyword-extraction:
+    post:
+      summary: "Extract tweet keywords"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/twitter-keyword-extraction"
+      responses:
+        "200":
+          description: Successful response
+  /tools/twitter-follower-forecast:
+    post:
+      summary: "Forecast follower growth"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/twitter-follower-forecast"
+      responses:
+        "200":
+          description: Successful response
+  /tools/twitter-anomaly-detection:
+    post:
+      summary: "Detect engagement anomalies"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/twitter-anomaly-detection"
+      responses:
+        "200":
+          description: Successful response
+  /tools/twitter-tweet-comparison:
+    post:
+      summary: "Compare tweet similarity"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/twitter-tweet-comparison"
+      responses:
+        "200":
+          description: Successful response
+  /tools/twitter-topic-clustering:
+    post:
+      summary: "Cluster tweet topics"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/twitter-topic-clustering"
+      responses:
+        "200":
+          description: Successful response
+  /tools/analyze-facebook-content:
+    post:
+      summary: "Analyze Facebook post content"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/analyze-facebook-content"
+      responses:
+        "200":
+          description: Successful response
+  /tools/predict-facebook-engagement:
+    post:
+      summary: "Predict post engagement"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/predict-facebook-engagement"
+      responses:
+        "200":
+          description: Successful response
+  /tools/classify-facebook-topics:
+    post:
+      summary: "Classify post topics"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/classify-facebook-topics"
+      responses:
+        "200":
+          description: Successful response
+  /tools/facebook-comment-sentiment:
+    post:
+      summary: "Comment sentiment analysis"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/facebook-comment-sentiment"
+      responses:
+        "200":
+          description: Successful response
+  /tools/facebook-post-keywords:
+    post:
+      summary: "Extract post keywords"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/facebook-post-keywords"
+      responses:
+        "200":
+          description: Successful response
+  /tools/facebook-posting-trends:
+    post:
+      summary: "Detect posting trends"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/facebook-posting-trends"
+      responses:
+        "200":
+          description: Successful response
+  /tools/facebook-growth-forecast:
+    post:
+      summary: "Forecast page growth"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/facebook-growth-forecast"
+      responses:
+        "200":
+          description: Successful response
+  /tools/facebook-anomaly-detection:
+    post:
+      summary: "Detect engagement anomalies"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/facebook-anomaly-detection"
+      responses:
+        "200":
+          description: Successful response
+  /tools/facebook-visual-comparison:
+    post:
+      summary: "Compare post visuals"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/facebook-visual-comparison"
+      responses:
+        "200":
+          description: Successful response
+  /tools/facebook-content-clustering:
+    post:
+      summary: "Cluster post content"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/facebook-content-clustering"
+      responses:
+        "200":
+          description: Successful response
+  /tools/discord-sentiment-analysis:
+    post:
+      summary: "Message sentiment analysis"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/discord-sentiment-analysis"
+      responses:
+        "200":
+          description: Successful response
+  /tools/discord-toxicity-detection:
+    post:
+      summary: "Detect toxic messages"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/discord-toxicity-detection"
+      responses:
+        "200":
+          description: Successful response
+  /tools/predict-discord-engagement:
+    post:
+      summary: "Predict message engagement"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/predict-discord-engagement"
+      responses:
+        "200":
+          description: Successful response
+  /tools/classify-discord-topics:
+    post:
+      summary: "Classify message topics"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/classify-discord-topics"
+      responses:
+        "200":
+          description: Successful response
+  /tools/discord-keyword-extraction:
+    post:
+      summary: "Extract keywords"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/discord-keyword-extraction"
+      responses:
+        "200":
+          description: Successful response
+  /tools/discord-activity-patterns:
+    post:
+      summary: "Detect activity patterns"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/discord-activity-patterns"
+      responses:
+        "200":
+          description: Successful response
+  /tools/discord-growth-forecast:
+    post:
+      summary: "Forecast growth"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/discord-growth-forecast"
+      responses:
+        "200":
+          description: Successful response
+  /tools/discord-anomaly-detection:
+    post:
+      summary: "Detect anomalies"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/discord-anomaly-detection"
+      responses:
+        "200":
+          description: Successful response
+  /tools/discord-channel-comparison:
+    post:
+      summary: "Compare two channels"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/discord-channel-comparison"
+      responses:
+        "200":
+          description: Successful response
+  /tools/discord-member-clustering:
+    post:
+      summary: "Cluster members by activity"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/discord-member-clustering"
+      responses:
+        "200":
+          description: Successful response
+  /tools/analyze-twitch-content:
+    post:
+      summary: "Analyze stream content"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/analyze-twitch-content"
+      responses:
+        "200":
+          description: Successful response
+  /tools/predict-twitch-viewers:
+    post:
+      summary: "Predict viewer count"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/predict-twitch-viewers"
+      responses:
+        "200":
+          description: Successful response
+  /tools/classify-twitch-games:
+    post:
+      summary: "Classify game content"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/classify-twitch-games"
+      responses:
+        "200":
+          description: Successful response
+  /tools/twitch-chat-sentiment:
+    post:
+      summary: "Chat sentiment analysis"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/twitch-chat-sentiment"
+      responses:
+        "200":
+          description: Successful response
+  /tools/twitch-keyword-extraction:
+    post:
+      summary: "Extract keywords"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/twitch-keyword-extraction"
+      responses:
+        "200":
+          description: Successful response
+  /tools/twitch-viewer-trends:
+    post:
+      summary: "Detect viewer trends"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/twitch-viewer-trends"
+      responses:
+        "200":
+          description: Successful response
+  /tools/twitch-growth-forecast:
+    post:
+      summary: "Forecast growth"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/twitch-growth-forecast"
+      responses:
+        "200":
+          description: Successful response
+  /tools/twitch-anomaly-detection:
+    post:
+      summary: "Detect anomalies"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/twitch-anomaly-detection"
+      responses:
+        "200":
+          description: Successful response
+  /tools/twitch-clip-comparison:
+    post:
+      summary: "Compare two clips"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/twitch-clip-comparison"
+      responses:
+        "200":
+          description: Successful response
+  /tools/twitch-stream-clustering:
+    post:
+      summary: "Cluster streams"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/twitch-stream-clustering"
+      responses:
+        "200":
+          description: Successful response
+  /tools/reddit-sentiment-analysis:
+    post:
+      summary: "Post sentiment analysis"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/reddit-sentiment-analysis"
+      responses:
+        "200":
+          description: Successful response
+  /tools/reddit-toxicity-detection:
+    post:
+      summary: "Detect toxic posts"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/reddit-toxicity-detection"
+      responses:
+        "200":
+          description: Successful response
+  /tools/predict-reddit-engagement:
+    post:
+      summary: "Predict post engagement"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/predict-reddit-engagement"
+      responses:
+        "200":
+          description: Successful response
+  /tools/classify-reddit-topics:
+    post:
+      summary: "Classify post topics"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/classify-reddit-topics"
+      responses:
+        "200":
+          description: Successful response
+  /tools/reddit-keyword-extraction:
+    post:
+      summary: "Extract keywords"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/reddit-keyword-extraction"
+      responses:
+        "200":
+          description: Successful response
+  /tools/reddit-trend-detection:
+    post:
+      summary: "Detect trends"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/reddit-trend-detection"
+      responses:
+        "200":
+          description: Successful response
+  /tools/reddit-growth-forecast:
+    post:
+      summary: "Forecast growth"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/reddit-growth-forecast"
+      responses:
+        "200":
+          description: Successful response
+  /tools/reddit-anomaly-detection:
+    post:
+      summary: "Detect anomalies"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/reddit-anomaly-detection"
+      responses:
+        "200":
+          description: Successful response
+  /tools/reddit-post-comparison:
+    post:
+      summary: "Compare two posts"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/reddit-post-comparison"
+      responses:
+        "200":
+          description: Successful response
+  /tools/reddit-community-clustering:
+    post:
+      summary: "Cluster community posts"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/reddit-community-clustering"
+      responses:
+        "200":
+          description: Successful response
+  /tools/linkedin-sentiment-analysis:
+    post:
+      summary: "Post sentiment analysis"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/linkedin-sentiment-analysis"
+      responses:
+        "200":
+          description: Successful response
+  /tools/predict-linkedin-engagement:
+    post:
+      summary: "Predict engagement"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/predict-linkedin-engagement"
+      responses:
+        "200":
+          description: Successful response
+  /tools/classify-linkedin-topics:
+    post:
+      summary: "Classify post topics"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/classify-linkedin-topics"
+      responses:
+        "200":
+          description: Successful response
+  /tools/linkedin-keyword-extraction:
+    post:
+      summary: "Extract keywords"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/linkedin-keyword-extraction"
+      responses:
+        "200":
+          description: Successful response
+  /tools/linkedin-trend-detection:
+    post:
+      summary: "Detect trends"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/linkedin-trend-detection"
+      responses:
+        "200":
+          description: Successful response
+  /tools/linkedin-growth-forecast:
+    post:
+      summary: "Forecast growth"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/linkedin-growth-forecast"
+      responses:
+        "200":
+          description: Successful response
+  /tools/linkedin-anomaly-detection:
+    post:
+      summary: "Detect anomalies"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/linkedin-anomaly-detection"
+      responses:
+        "200":
+          description: Successful response
+  /tools/linkedin-post-comparison:
+    post:
+      summary: "Compare two posts"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/linkedin-post-comparison"
+      responses:
+        "200":
+          description: Successful response
+  /tools/linkedin-content-clustering:
+    post:
+      summary: "Cluster content"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/linkedin-content-clustering"
+      responses:
+        "200":
+          description: Successful response
+  /tools/linkedin-audience-segmentation:
+    post:
+      summary: "Analyze audience"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/linkedin-audience-segmentation"
+      responses:
+        "200":
+          description: Successful response
+  /tools/threads-sentiment-analysis:
+    post:
+      summary: "Post sentiment analysis"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/threads-sentiment-analysis"
+      responses:
+        "200":
+          description: Successful response
+  /tools/threads-toxicity-detection:
+    post:
+      summary: "Detect toxic posts"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/threads-toxicity-detection"
+      responses:
+        "200":
+          description: Successful response
+  /tools/predict-threads-engagement:
+    post:
+      summary: "Predict engagement"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/predict-threads-engagement"
+      responses:
+        "200":
+          description: Successful response
+  /tools/classify-threads-topics:
+    post:
+      summary: "Classify post topics"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/classify-threads-topics"
+      responses:
+        "200":
+          description: Successful response
+  /tools/threads-keyword-extraction:
+    post:
+      summary: "Extract keywords"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/threads-keyword-extraction"
+      responses:
+        "200":
+          description: Successful response
+  /tools/threads-trend-detection:
+    post:
+      summary: "Detect trends"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/threads-trend-detection"
+      responses:
+        "200":
+          description: Successful response
+  /tools/threads-growth-forecast:
+    post:
+      summary: "Forecast growth"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/threads-growth-forecast"
+      responses:
+        "200":
+          description: Successful response
+  /tools/threads-anomaly-detection:
+    post:
+      summary: "Detect anomalies"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/threads-anomaly-detection"
+      responses:
+        "200":
+          description: Successful response
+  /tools/threads-post-comparison:
+    post:
+      summary: "Compare two posts"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/threads-post-comparison"
+      responses:
+        "200":
+          description: Successful response
+  /tools/threads-content-clustering:
+    post:
+      summary: "Cluster content"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/threads-content-clustering"
+      responses:
+        "200":
+          description: Successful response
+  /tools/bluesky-sentiment-analysis:
+    post:
+      summary: "Post sentiment analysis"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/bluesky-sentiment-analysis"
+      responses:
+        "200":
+          description: Successful response
+  /tools/bluesky-toxicity-detection:
+    post:
+      summary: "Detect toxic posts"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/bluesky-toxicity-detection"
+      responses:
+        "200":
+          description: Successful response
+  /tools/predict-bluesky-engagement:
+    post:
+      summary: "Predict engagement"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/predict-bluesky-engagement"
+      responses:
+        "200":
+          description: Successful response
+  /tools/classify-bluesky-topics:
+    post:
+      summary: "Classify post topics"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/classify-bluesky-topics"
+      responses:
+        "200":
+          description: Successful response
+  /tools/bluesky-keyword-extraction:
+    post:
+      summary: "Extract keywords"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/bluesky-keyword-extraction"
+      responses:
+        "200":
+          description: Successful response
+  /tools/bluesky-trend-detection:
+    post:
+      summary: "Detect trends"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/bluesky-trend-detection"
+      responses:
+        "200":
+          description: Successful response
+  /tools/bluesky-growth-forecast:
+    post:
+      summary: "Forecast growth"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/bluesky-growth-forecast"
+      responses:
+        "200":
+          description: Successful response
+  /tools/bluesky-anomaly-detection:
+    post:
+      summary: "Detect anomalies"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/bluesky-anomaly-detection"
+      responses:
+        "200":
+          description: Successful response
+  /tools/bluesky-post-comparison:
+    post:
+      summary: "Compare two posts"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/bluesky-post-comparison"
+      responses:
+        "200":
+          description: Successful response
+  /tools/bluesky-content-clustering:
+    post:
+      summary: "Cluster content"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/bluesky-content-clustering"
+      responses:
+        "200":
+          description: Successful response
+  /tools/mastodon-sentiment-analysis:
+    post:
+      summary: "Status sentiment analysis"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/mastodon-sentiment-analysis"
+      responses:
+        "200":
+          description: Successful response
+  /tools/mastodon-toxicity-detection:
+    post:
+      summary: "Detect toxic statuses"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/mastodon-toxicity-detection"
+      responses:
+        "200":
+          description: Successful response
+  /tools/predict-mastodon-engagement:
+    post:
+      summary: "Predict engagement"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/predict-mastodon-engagement"
+      responses:
+        "200":
+          description: Successful response
+  /tools/classify-mastodon-topics:
+    post:
+      summary: "Classify status topics"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/classify-mastodon-topics"
+      responses:
+        "200":
+          description: Successful response
+  /tools/mastodon-keyword-extraction:
+    post:
+      summary: "Extract keywords"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/mastodon-keyword-extraction"
+      responses:
+        "200":
+          description: Successful response
+  /tools/mastodon-trend-detection:
+    post:
+      summary: "Detect trends"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/mastodon-trend-detection"
+      responses:
+        "200":
+          description: Successful response
+  /tools/mastodon-growth-forecast:
+    post:
+      summary: "Forecast growth"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/mastodon-growth-forecast"
+      responses:
+        "200":
+          description: Successful response
+  /tools/mastodon-anomaly-detection:
+    post:
+      summary: "Detect anomalies"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/mastodon-anomaly-detection"
+      responses:
+        "200":
+          description: Successful response
+  /tools/mastodon-status-comparison:
+    post:
+      summary: "Compare two statuses"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/mastodon-status-comparison"
+      responses:
+        "200":
+          description: Successful response
+  /tools/mastodon-content-clustering:
+    post:
+      summary: "Cluster content"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/mastodon-content-clustering"
+      responses:
+        "200":
+          description: Successful response
+  /tools/github-issue-sentiment:
+    post:
+      summary: "Issue sentiment analysis"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/github-issue-sentiment"
+      responses:
+        "200":
+          description: Successful response
+  /tools/classify-github-issues:
+    post:
+      summary: "Classify issue topics"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/classify-github-issues"
+      responses:
+        "200":
+          description: Successful response
+  /tools/github-keyword-extraction:
+    post:
+      summary: "Extract keywords"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/github-keyword-extraction"
+      responses:
+        "200":
+          description: Successful response
+  /tools/github-trend-detection:
+    post:
+      summary: "Detect trends"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/github-trend-detection"
+      responses:
+        "200":
+          description: Successful response
+  /tools/github-growth-forecast:
+    post:
+      summary: "Forecast growth"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/github-growth-forecast"
+      responses:
+        "200":
+          description: Successful response
+  /tools/github-anomaly-detection:
+    post:
+      summary: "Detect anomalies"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/github-anomaly-detection"
+      responses:
+        "200":
+          description: Successful response
+  /tools/github-repo-comparison:
+    post:
+      summary: "Compare two repos"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/github-repo-comparison"
+      responses:
+        "200":
+          description: Successful response
+  /tools/github-issue-clustering:
+    post:
+      summary: "Cluster issues"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/github-issue-clustering"
+      responses:
+        "200":
+          description: Successful response
+  /tools/predict-github-issue-engagement:
+    post:
+      summary: "Predict issue engagement"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/predict-github-issue-engagement"
+      responses:
+        "200":
+          description: Successful response
+  /tools/github-contributor-patterns:
+    post:
+      summary: "Analyze contributor patterns"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/github-contributor-patterns"
+      responses:
+        "200":
+          description: Successful response
+  /tools/spotify-track-sentiment:
+    post:
+      summary: "Analyze track mood/sentiment"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/spotify-track-sentiment"
+      responses:
+        "200":
+          description: Successful response
+  /tools/spotify-genre-classification:
+    post:
+      summary: "Classify genre from audio features"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/spotify-genre-classification"
+      responses:
+        "200":
+          description: Successful response
+  /tools/predict-spotify-popularity:
+    post:
+      summary: "Predict track popularity"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/predict-spotify-popularity"
+      responses:
+        "200":
+          description: Successful response
+  /tools/spotify-audio-keywords:
+    post:
+      summary: "Extract audio keywords"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/spotify-audio-keywords"
+      responses:
+        "200":
+          description: Successful response
+  /tools/spotify-trend-detection:
+    post:
+      summary: "Detect music trends"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/spotify-trend-detection"
+      responses:
+        "200":
+          description: Successful response
+  /tools/spotify-growth-forecast:
+    post:
+      summary: "Forecast growth"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/spotify-growth-forecast"
+      responses:
+        "200":
+          description: Successful response
+  /tools/spotify-anomaly-detection:
+    post:
+      summary: "Detect anomalies"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/spotify-anomaly-detection"
+      responses:
+        "200":
+          description: Successful response
+  /tools/spotify-track-comparison:
+    post:
+      summary: "Compare two tracks"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/spotify-track-comparison"
+      responses:
+        "200":
+          description: Successful response
+  /tools/spotify-playlist-clustering:
+    post:
+      summary: "Cluster playlist tracks"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/spotify-playlist-clustering"
+      responses:
+        "200":
+          description: Successful response
+  /tools/spotify-audio-analysis:
+    post:
+      summary: "Deep audio feature analysis"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/spotify-audio-analysis"
+      responses:
+        "200":
+          description: Successful response
+  /tools/analyze-pinterest-images:
+    post:
+      summary: "Analyze pin images"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/analyze-pinterest-images"
+      responses:
+        "200":
+          description: Successful response
+  /tools/predict-pinterest-engagement:
+    post:
+      summary: "Predict pin engagement"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/predict-pinterest-engagement"
+      responses:
+        "200":
+          description: Successful response
+  /tools/classify-pinterest-content:
+    post:
+      summary: "Classify pin content"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/classify-pinterest-content"
+      responses:
+        "200":
+          description: Successful response
+  /tools/pinterest-keyword-extraction:
+    post:
+      summary: "Extract keywords"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/pinterest-keyword-extraction"
+      responses:
+        "200":
+          description: Successful response
+  /tools/pinterest-trend-detection:
+    post:
+      summary: "Detect trends"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/pinterest-trend-detection"
+      responses:
+        "200":
+          description: Successful response
+  /tools/pinterest-growth-forecast:
+    post:
+      summary: "Forecast growth"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/pinterest-growth-forecast"
+      responses:
+        "200":
+          description: Successful response
+  /tools/pinterest-anomaly-detection:
+    post:
+      summary: "Detect anomalies"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/pinterest-anomaly-detection"
+      responses:
+        "200":
+          description: Successful response
+  /tools/pinterest-pin-comparison:
+    post:
+      summary: "Compare two pins"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/pinterest-pin-comparison"
+      responses:
+        "200":
+          description: Successful response
+  /tools/pinterest-board-clustering:
+    post:
+      summary: "Cluster boards"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/pinterest-board-clustering"
+      responses:
+        "200":
+          description: Successful response
+  /tools/pinterest-audience-analysis:
+    post:
+      summary: "Analyze audience"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/pinterest-audience-analysis"
+      responses:
+        "200":
+          description: Successful response
+components:
+  schemas:
+    analyze-image:
+      type: object
+      properties:
+        imageUrl:
+          type: string
+      required:
+        - imageUrl
+    detect-objects:
+      type: object
+      properties:
+        imageUrl:
+          type: string
+      required:
+        - imageUrl
+    detect-faces:
+      type: object
+      properties:
+        imageUrl:
+          type: string
+      required:
+        - imageUrl
+    classify-image:
+      type: object
+      properties:
+        imageUrl:
+          type: string
+        labels:
+          type: array
+          items:
+            type: string
+      required:
+        - imageUrl
+        - labels
+    analyze-text:
+      type: object
+      properties:
+        text:
+          type: string
+      required:
+        - text
+    extract-keywords:
+      type: object
+      properties:
+        text:
+          type: string
+        numKeywords:
+          type: number
+      required:
+        - text
+    detect-sentiment:
+      type: object
+      properties:
+        text:
+          type: string
+      required:
+        - text
+    detect-toxicity:
+      type: object
+      properties:
+        text:
+          type: string
+      required:
+        - text
+    embed-text:
+      type: object
+      properties:
+        text:
+          type: string
+      required:
+        - text
+    answer-question:
+      type: object
+      properties:
+        question:
+          type: string
+        context:
+          type: string
+      required:
+        - question
+        - context
+    predict-trend:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    forecast-data:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+        periods:
+          type: number
+      required:
+        - dataPoints
+    detect-anomalies:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    cluster-data:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+        k:
+          type: number
+      required:
+        - dataPoints
+        - k
+    reduce-dimensions:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+        dimensions:
+          type: number
+      required:
+        - dataPoints
+        - dimensions
+    regression:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+      required:
+        - dataPoints
+    train-model:
+      type: object
+      properties:
+        features:
+          type: array
+        labels:
+          type: array
+        epochs:
+          type: number
+      required:
+        - features
+        - labels
+    ab-test:
+      type: object
+      properties:
+        groupA:
+          type: array
+          items:
+            type: number
+        groupB:
+          type: array
+          items:
+            type: number
+      required:
+        - groupA
+        - groupB
+    analyze-youtube-thumbnails:
+      type: object
+      properties:
+        imageUrls:
+          type: array
+          items:
+            type: string
+      required:
+        - imageUrls
+    classify-youtube-content:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    predict-youtube-views:
+      type: object
+      properties:
+        titleLen:
+          type: number
+        descLen:
+          type: number
+        hasNumbers:
+          type: boolean
+        hasEmoji:
+          type: boolean
+        wordCount:
+          type: number
+        likes:
+          type: number
+        comments:
+          type: number
+      required:
+        - titleLen
+        - descLen
+        - wordCount
+        - likes
+        - comments
+    youtube-comment-sentiment:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    youtube-channel-keywords:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    youtube-trend-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    youtube-forecast:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    youtube-anomaly-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    youtube-thumbnail-comparison:
+      type: object
+      properties:
+        imageUrl1:
+          type: string
+        imageUrl2:
+          type: string
+      required:
+        - imageUrl1
+        - imageUrl2
+    youtube-topic-clustering:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    analyze-instagram-images:
+      type: object
+      properties:
+        imageUrls:
+          type: array
+          items:
+            type: string
+      required:
+        - imageUrls
+    predict-instagram-engagement:
+      type: object
+      properties:
+        captionLen:
+          type: number
+        hashtagCount:
+          type: number
+        emojiCount:
+          type: number
+        likes:
+          type: number
+        comments:
+          type: number
+        shares:
+          type: number
+      required:
+        - captionLen
+        - hashtagCount
+        - likes
+        - comments
+    classify-instagram-content:
+      type: object
+      properties:
+        text:
+          type: string
+      required:
+        - text
+    instagram-caption-sentiment:
+      type: object
+      properties:
+        text:
+          type: string
+      required:
+        - text
+    instagram-hashtag-extraction:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    instagram-visual-trends:
+      type: object
+      properties:
+        imageUrls:
+          type: array
+          items:
+            type: string
+      required:
+        - imageUrls
+    instagram-follower-forecast:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    instagram-anomaly-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    instagram-post-comparison:
+      type: object
+      properties:
+        imageUrl1:
+          type: string
+        imageUrl2:
+          type: string
+      required:
+        - imageUrl1
+        - imageUrl2
+    instagram-content-clustering:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    analyze-tiktok-thumbnails:
+      type: object
+      properties:
+        imageUrls:
+          type: array
+          items:
+            type: string
+      required:
+        - imageUrls
+    predict-tiktok-virality:
+      type: object
+      properties:
+        titleLen:
+          type: number
+        descLen:
+          type: number
+        duration:
+          type: number
+        hashtagCount:
+          type: number
+        emojiCount:
+          type: number
+        views:
+          type: number
+        likes:
+          type: number
+        comments:
+          type: number
+        shares:
+          type: number
+      required:
+        - titleLen
+        - duration
+        - views
+        - likes
+    classify-tiktok-content:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    tiktok-content-sentiment:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    tiktok-trending-topics:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    tiktok-view-patterns:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    tiktok-follower-forecast:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    tiktok-anomaly-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    tiktok-thumbnail-comparison:
+      type: object
+      properties:
+        imageUrl1:
+          type: string
+        imageUrl2:
+          type: string
+      required:
+        - imageUrl1
+        - imageUrl2
+    tiktok-content-clustering:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    twitter-content-keywords:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    predict-twitter-engagement:
+      type: object
+      properties:
+        textLen:
+          type: number
+        hashtagCount:
+          type: number
+        mentionCount:
+          type: number
+        linkCount:
+          type: number
+        questionCount:
+          type: number
+        exclamationCount:
+          type: number
+        likes:
+          type: number
+        retweets:
+          type: number
+        replies:
+          type: number
+      required:
+        - textLen
+        - likes
+        - retweets
+    classify-twitter-topics:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    twitter-toxicity-detection:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    twitter-sentiment-analysis:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    twitter-keyword-extraction:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    twitter-follower-forecast:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    twitter-anomaly-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    twitter-tweet-comparison:
+      type: object
+      properties:
+        text1:
+          type: string
+        text2:
+          type: string
+      required:
+        - text1
+        - text2
+    twitter-topic-clustering:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    analyze-facebook-content:
+      type: object
+      properties:
+        message:
+          type: string
+        imageUrl:
+          type: string
+      required:
+        - message
+    predict-facebook-engagement:
+      type: object
+      properties:
+        messageLen:
+          type: number
+        hashtagCount:
+          type: number
+        emojiCount:
+          type: number
+        linkCount:
+          type: number
+        wordCount:
+          type: number
+        impressions:
+          type: number
+      required:
+        - messageLen
+        - wordCount
+    classify-facebook-topics:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    facebook-comment-sentiment:
+      type: object
+      properties:
+        text:
+          type: string
+      required:
+        - text
+    facebook-post-keywords:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    facebook-posting-trends:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    facebook-growth-forecast:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    facebook-anomaly-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    facebook-visual-comparison:
+      type: object
+      properties:
+        imageUrl1:
+          type: string
+        imageUrl2:
+          type: string
+      required:
+        - imageUrl1
+        - imageUrl2
+    facebook-content-clustering:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    discord-sentiment-analysis:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    discord-toxicity-detection:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    predict-discord-engagement:
+      type: object
+      properties:
+        messageLen:
+          type: number
+        emojiCount:
+          type: number
+        mentionCount:
+          type: number
+        reactionCount:
+          type: number
+        replyCount:
+          type: number
+      required:
+        - messageLen
+    classify-discord-topics:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    discord-keyword-extraction:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    discord-activity-patterns:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    discord-growth-forecast:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    discord-anomaly-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    discord-channel-comparison:
+      type: object
+      properties:
+        texts1:
+          type: array
+          items:
+            type: string
+        texts2:
+          type: array
+          items:
+            type: string
+      required:
+        - texts1
+        - texts2
+    discord-member-clustering:
+      type: object
+      properties:
+        messageCount:
+          type: number
+        reactionCount:
+          type: number
+        activeDays:
+          type: number
+      required:
+        - messageCount
+        - reactionCount
+        - activeDays
+    analyze-twitch-content:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    predict-twitch-viewers:
+      type: object
+      properties:
+        titleLen:
+          type: number
+        gamePopularity:
+          type: number
+        durationMinutes:
+          type: number
+        followerCount:
+          type: number
+      required:
+        - titleLen
+        - durationMinutes
+    classify-twitch-games:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    twitch-chat-sentiment:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    twitch-keyword-extraction:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    twitch-viewer-trends:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    twitch-growth-forecast:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    twitch-anomaly-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    twitch-clip-comparison:
+      type: object
+      properties:
+        text1:
+          type: string
+        text2:
+          type: string
+      required:
+        - text1
+        - text2
+    twitch-stream-clustering:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    reddit-sentiment-analysis:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    reddit-toxicity-detection:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    predict-reddit-engagement:
+      type: object
+      properties:
+        titleLen:
+          type: number
+        bodyLen:
+          type: number
+        upvoteRatio:
+          type: number
+        commentCount:
+          type: number
+        awards:
+          type: number
+      required:
+        - titleLen
+        - bodyLen
+    classify-reddit-topics:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    reddit-keyword-extraction:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    reddit-trend-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    reddit-growth-forecast:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    reddit-anomaly-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    reddit-post-comparison:
+      type: object
+      properties:
+        text1:
+          type: string
+        text2:
+          type: string
+      required:
+        - text1
+        - text2
+    reddit-community-clustering:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    linkedin-sentiment-analysis:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    predict-linkedin-engagement:
+      type: object
+      properties:
+        textLen:
+          type: number
+        hashtagCount:
+          type: number
+        linkCount:
+          type: number
+        imageCount:
+          type: number
+        commentCount:
+          type: number
+        likeCount:
+          type: number
+      required:
+        - textLen
+    classify-linkedin-topics:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    linkedin-keyword-extraction:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    linkedin-trend-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    linkedin-growth-forecast:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    linkedin-anomaly-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    linkedin-post-comparison:
+      type: object
+      properties:
+        text1:
+          type: string
+        text2:
+          type: string
+      required:
+        - text1
+        - text2
+    linkedin-content-clustering:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    linkedin-audience-segmentation:
+      type: object
+      properties:
+        industry:
+          type: string
+        seniority:
+          type: string
+        companySize:
+          type: string
+      required:
+        - industry
+    threads-sentiment-analysis:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    threads-toxicity-detection:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    predict-threads-engagement:
+      type: object
+      properties:
+        textLen:
+          type: number
+        emojiCount:
+          type: number
+        likeCount:
+          type: number
+        replyCount:
+          type: number
+      required:
+        - textLen
+    classify-threads-topics:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    threads-keyword-extraction:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    threads-trend-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    threads-growth-forecast:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    threads-anomaly-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    threads-post-comparison:
+      type: object
+      properties:
+        text1:
+          type: string
+        text2:
+          type: string
+      required:
+        - text1
+        - text2
+    threads-content-clustering:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    bluesky-sentiment-analysis:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    bluesky-toxicity-detection:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    predict-bluesky-engagement:
+      type: object
+      properties:
+        textLen:
+          type: number
+        wordCount:
+          type: number
+        likeCount:
+          type: number
+        repostCount:
+          type: number
+        replyCount:
+          type: number
+      required:
+        - textLen
+    classify-bluesky-topics:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    bluesky-keyword-extraction:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    bluesky-trend-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    bluesky-growth-forecast:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    bluesky-anomaly-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    bluesky-post-comparison:
+      type: object
+      properties:
+        text1:
+          type: string
+        text2:
+          type: string
+      required:
+        - text1
+        - text2
+    bluesky-content-clustering:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    mastodon-sentiment-analysis:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    mastodon-toxicity-detection:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    predict-mastodon-engagement:
+      type: object
+      properties:
+        textLen:
+          type: number
+        boostCount:
+          type: number
+        favouriteCount:
+          type: number
+        replyCount:
+          type: number
+      required:
+        - textLen
+    classify-mastodon-topics:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    mastodon-keyword-extraction:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    mastodon-trend-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    mastodon-growth-forecast:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    mastodon-anomaly-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    mastodon-status-comparison:
+      type: object
+      properties:
+        text1:
+          type: string
+        text2:
+          type: string
+      required:
+        - text1
+        - text2
+    mastodon-content-clustering:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    github-issue-sentiment:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    classify-github-issues:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    github-keyword-extraction:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    github-trend-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    github-growth-forecast:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    github-anomaly-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    github-repo-comparison:
+      type: object
+      properties:
+        texts1:
+          type: array
+          items:
+            type: string
+        texts2:
+          type: array
+          items:
+            type: string
+      required:
+        - texts1
+        - texts2
+    github-issue-clustering:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    predict-github-issue-engagement:
+      type: object
+      properties:
+        titleLen:
+          type: number
+        bodyLen:
+          type: number
+        labelCount:
+          type: number
+        commentCount:
+          type: number
+      required:
+        - titleLen
+        - bodyLen
+    github-contributor-patterns:
+      type: object
+      properties:
+        commits:
+          type: number
+        additions:
+          type: number
+        deletions:
+          type: number
+        activeDays:
+          type: number
+      required:
+        - commits
+        - activeDays
+    spotify-track-sentiment:
+      type: object
+      properties:
+        danceability:
+          type: number
+        energy:
+          type: number
+        valence:
+          type: number
+        tempo:
+          type: number
+        loudness:
+          type: number
+        speechiness:
+          type: number
+        acousticness:
+          type: number
+        instrumentalness:
+          type: number
+        liveness:
+          type: number
+        durationMs:
+          type: number
+      required:
+        - danceability
+        - energy
+        - valence
+        - tempo
+    spotify-genre-classification:
+      type: object
+      properties:
+        danceability:
+          type: number
+        energy:
+          type: number
+        valence:
+          type: number
+        tempo:
+          type: number
+        loudness:
+          type: number
+        speechiness:
+          type: number
+        acousticness:
+          type: number
+        instrumentalness:
+          type: number
+        liveness:
+          type: number
+      required:
+        - danceability
+        - energy
+        - valence
+        - tempo
+    predict-spotify-popularity:
+      type: object
+      properties:
+        danceability:
+          type: number
+        energy:
+          type: number
+        valence:
+          type: number
+        tempo:
+          type: number
+        loudness:
+          type: number
+        speechiness:
+          type: number
+        acousticness:
+          type: number
+        instrumentalness:
+          type: number
+        liveness:
+          type: number
+      required:
+        - danceability
+        - energy
+        - valence
+        - tempo
+    spotify-audio-keywords:
+      type: object
+      properties:
+        danceability:
+          type: number
+        energy:
+          type: number
+        valence:
+          type: number
+        tempo:
+          type: number
+        loudness:
+          type: number
+        speechiness:
+          type: number
+        acousticness:
+          type: number
+        instrumentalness:
+          type: number
+        liveness:
+          type: number
+      required:
+        - danceability
+        - energy
+        - valence
+        - tempo
+    spotify-trend-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    spotify-growth-forecast:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    spotify-anomaly-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    spotify-track-comparison:
+      type: object
+      properties:
+        track1:
+          type: object
+        track2:
+          type: object
+      required:
+        - track1
+        - track2
+    spotify-playlist-clustering:
+      type: object
+      properties:
+        tracks:
+          type: array
+          items:
+            type: object
+      required:
+        - tracks
+    spotify-audio-analysis:
+      type: object
+      properties:
+        danceability:
+          type: number
+        energy:
+          type: number
+        valence:
+          type: number
+        tempo:
+          type: number
+        loudness:
+          type: number
+        speechiness:
+          type: number
+        acousticness:
+          type: number
+        instrumentalness:
+          type: number
+        liveness:
+          type: number
+      required:
+        - danceability
+        - energy
+        - valence
+        - tempo
+    analyze-pinterest-images:
+      type: object
+      properties:
+        imageUrls:
+          type: array
+          items:
+            type: string
+      required:
+        - imageUrls
+    predict-pinterest-engagement:
+      type: object
+      properties:
+        titleLen:
+          type: number
+        descLen:
+          type: number
+        linkCount:
+          type: number
+        boardFollowers:
+          type: number
+      required:
+        - titleLen
+    classify-pinterest-content:
+      type: object
+      properties:
+        text:
+          type: string
+      required:
+        - text
+    pinterest-keyword-extraction:
+      type: object
+      properties:
+        texts:
+          type: array
+          items:
+            type: string
+      required:
+        - texts
+    pinterest-trend-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    pinterest-growth-forecast:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    pinterest-anomaly-detection:
+      type: object
+      properties:
+        dataPoints:
+          type: array
+          items:
+            type: number
+      required:
+        - dataPoints
+    pinterest-pin-comparison:
+      type: object
+      properties:
+        text1:
+          type: string
+        text2:
+          type: string
+      required:
+        - text1
+        - text2
+    pinterest-board-clustering:
+      type: object
+      properties:
+        boards:
+          type: array
+          items:
+            type: object
+      required:
+        - boards
+    pinterest-audience-analysis:
+      type: object
+      properties:
+        ageRange:
+          type: string
+        gender:
+          type: string
+        location:
+          type: string
+        interests:
+          type: array
+          items:
+            type: string
+      required:
+        - ageRange

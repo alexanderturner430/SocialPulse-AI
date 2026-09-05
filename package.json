@@ -1,0 +1,62 @@
+{
+  "name": "tensorflow-social-mcp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "TensorFlow.js Social Media MCP Server - ML-powered analytics for YouTube, Instagram, TikTok, Twitter, Facebook, Discord, Twitch, Reddit, LinkedIn, Threads, Bluesky, Mastodon, GitHub, Spotify, Pinterest",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "tui": "node tui.mjs",
+    "mcp": "node mcp-server.js",
+    "dev": "node --watch index.js",
+    "check": "node --check index.js && node --check mcp-server.js",
+    "test": "jest",
+    "start:all": "concurrently \"npm run mcp\" \"node rest-api.js\" \"node worker.js\"",
+    "paid-test:keygen": "node scripts/x402/paid-test/payer-keygen.js",
+    "paid-test:airdrop": "node scripts/x402/paid-test/airdrop.js",
+    "paid-test:run": "node scripts/x402/paid-test/paid-request.js",
+    "submit:mcp": "bash scripts/mcp-register.sh submit",
+    "check:mcp": "bash scripts/mcp-register.sh check"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "overrides": {
+    "@tensorflow/tfjs-core": "4.22.0",
+    "@tensorflow/tfjs-converter": "4.22.0",
+    "@tensorflow/tfjs-data": "4.22.0",
+    "@tensorflow/tfjs-layers": "4.22.0",
+    "@tensorflow/tfjs-backend-cpu": "4.22.0",
+    "@tensorflow/tfjs-backend-webgl": "4.22.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "@tensorflow-models/coco-ssd": "^2.2.3",
+    "@tensorflow-models/knn-classifier": "^1.2.6",
+    "@tensorflow-models/mobilenet": "^2.1.1",
+    "@tensorflow-models/toxicity": "^1.2.2",
+    "@tensorflow-models/universal-sentence-encoder": "^1.3.3",
+    "@tensorflow/tfjs-node": "^4.22.0",
+    "@vladmandic/face-api": "^1.7.15",
+    "@x402/core": "^2.24.0",
+    "@x402/express": "^2.24.0",
+    "@x402/svm": "^2.24.0",
+    "better-sqlite3": "^13.0.3",
+    "bullmq": "^6.2.2",
+    "express": "^5.2.1",
+    "ink": "^7.1.1",
+    "ioredis": "^6.0.0",
+    "openai": "^7.5.0",
+    "react": "^19.2.8",
+    "sentiment": "^5.0.2",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@noble/curves": "^1.8.0",
+    "@scure/base": "^1.2.0",
+    "@solana/kit": "^5.5.1",
+    "concurrently": "^10.0.5",
+    "dotenv": "^17.4.2",
+    "jest": "^30.4.2"
+  }
+}
