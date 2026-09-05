@@ -43,6 +43,8 @@
     "@x402/svm": "^2.24.0",
     "better-sqlite3": "^13.0.3",
     "bullmq": "^6.2.2",
+    "concurrently": "^10.0.5",
+    "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "ink": "^7.1.1",
     "ioredis": "^6.0.0",
@@ -55,8 +57,6 @@
     "@noble/curves": "^1.8.0",
     "@scure/base": "^1.2.0",
     "@solana/kit": "^5.5.1",
-    "concurrently": "^10.0.5",
-    "dotenv": "^17.4.2",
     "jest": "^30.4.2"
   }
 }
