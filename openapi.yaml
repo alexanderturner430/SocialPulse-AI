@@ -5,1854 +5,4599 @@ info:
 paths:
   /tools/analyze-image:
     post:
-      summary: "Classify image content using MobileNet"
+      summary: Classify image content using MobileNet
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/analyze-image"
+              $ref: '#/components/schemas/analyze-image'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/detect-objects:
     post:
-      summary: "Detect objects in image using COCO-SSD"
+      summary: Detect objects in image using COCO-SSD
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/detect-objects"
+              $ref: '#/components/schemas/detect-objects'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/detect-faces:
     post:
-      summary: "Detect faces with age/gender/emotion analysis"
+      summary: Detect faces with age/gender/emotion analysis
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/detect-faces"
+              $ref: '#/components/schemas/detect-faces'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/classify-image:
     post:
-      summary: "Classify image against custom labels"
+      summary: Classify image against custom labels
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/classify-image"
+              $ref: '#/components/schemas/classify-image'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/analyze-text:
     post:
-      summary: "Analyze text content with NLP"
+      summary: Analyze text content with NLP
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/analyze-text"
+              $ref: '#/components/schemas/analyze-text'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/extract-keywords:
     post:
-      summary: "Extract keywords from text using ML"
+      summary: Extract keywords from text using ML
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/extract-keywords"
+              $ref: '#/components/schemas/extract-keywords'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/detect-sentiment:
     post:
-      summary: "Analyze sentiment of text"
+      summary: Analyze sentiment of text
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/detect-sentiment"
+              $ref: '#/components/schemas/detect-sentiment'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/detect-toxicity:
     post:
-      summary: "Detect toxic/offensive language"
+      summary: Detect toxic/offensive language
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/detect-toxicity"
+              $ref: '#/components/schemas/detect-toxicity'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/embed-text:
     post:
-      summary: "Generate text embeddings"
+      summary: Generate text embeddings
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/embed-text"
+              $ref: '#/components/schemas/embed-text'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/answer-question:
     post:
-      summary: "Extractive QA from context"
+      summary: Extractive QA from context
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/answer-question"
+              $ref: '#/components/schemas/answer-question'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/predict-trend:
     post:
-      summary: "Predict trend from data points"
+      summary: Predict trend from data points
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/predict-trend"
+              $ref: '#/components/schemas/predict-trend'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/forecast-data:
     post:
-      summary: "Forecast time series data"
+      summary: Forecast time series data
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/forecast-data"
+              $ref: '#/components/schemas/forecast-data'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/detect-anomalies:
     post:
-      summary: "Detect anomalies in data"
+      summary: Detect anomalies in data
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/detect-anomalies"
+              $ref: '#/components/schemas/detect-anomalies'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/cluster-data:
     post:
-      summary: "K-Means clustering"
+      summary: K-Means clustering
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/cluster-data"
+              $ref: '#/components/schemas/cluster-data'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/reduce-dimensions:
     post:
-      summary: "PCA dimensionality reduction"
+      summary: PCA dimensionality reduction
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/reduce-dimensions"
+              $ref: '#/components/schemas/reduce-dimensions'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/regression:
     post:
-      summary: "Neural network regression"
+      summary: Neural network regression
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/regression"
+              $ref: '#/components/schemas/regression'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/train-model:
     post:
-      summary: "Train a KNN model"
+      summary: Train a KNN model
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/train-model"
+              $ref: '#/components/schemas/train-model'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/ab-test:
     post:
-      summary: "Statistical A/B test analysis"
+      summary: Statistical A/B test analysis
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/ab-test"
+              $ref: '#/components/schemas/ab-test'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/analyze-youtube-thumbnails:
     post:
-      summary: "Analyze channel thumbnails for engagement"
+      summary: Analyze channel thumbnails for engagement
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/analyze-youtube-thumbnails"
+              $ref: '#/components/schemas/analyze-youtube-thumbnails'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/classify-youtube-content:
     post:
-      summary: "Classify video content types"
+      summary: Classify video content types
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/classify-youtube-content"
+              $ref: '#/components/schemas/classify-youtube-content'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/predict-youtube-views:
     post:
-      summary: "Predict video views from features"
+      summary: Predict video views from features
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/predict-youtube-views"
+              $ref: '#/components/schemas/predict-youtube-views'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/youtube-comment-sentiment:
     post:
-      summary: "Sentiment analysis on comments"
+      summary: Sentiment analysis on comments
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/youtube-comment-sentiment"
+              $ref: '#/components/schemas/youtube-comment-sentiment'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/youtube-channel-keywords:
     post:
-      summary: "Extract channel keywords"
+      summary: Extract channel keywords
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/youtube-channel-keywords"
+              $ref: '#/components/schemas/youtube-channel-keywords'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/youtube-trend-detection:
     post:
-      summary: "Detect channel trends"
+      summary: Detect channel trends
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/youtube-trend-detection"
+              $ref: '#/components/schemas/youtube-trend-detection'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/youtube-forecast:
     post:
-      summary: "Forecast channel growth"
+      summary: Forecast channel growth
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/youtube-forecast"
+              $ref: '#/components/schemas/youtube-forecast'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/youtube-anomaly-detection:
     post:
-      summary: "Detect view anomalies"
+      summary: Detect view anomalies
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/youtube-anomaly-detection"
+              $ref: '#/components/schemas/youtube-anomaly-detection'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/youtube-thumbnail-comparison:
     post:
-      summary: "Compare two thumbnails"
+      summary: Compare two thumbnails
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/youtube-thumbnail-comparison"
+              $ref: '#/components/schemas/youtube-thumbnail-comparison'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/youtube-topic-clustering:
     post:
-      summary: "Cluster videos by topic"
+      summary: Cluster videos by topic
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/youtube-topic-clustering"
+              $ref: '#/components/schemas/youtube-topic-clustering'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/analyze-instagram-images:
     post:
-      summary: "Analyze post images"
+      summary: Analyze post images
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/analyze-instagram-images"
+              $ref: '#/components/schemas/analyze-instagram-images'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/predict-instagram-engagement:
     post:
-      summary: "Predict post engagement"
+      summary: Predict post engagement
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/predict-instagram-engagement"
+              $ref: '#/components/schemas/predict-instagram-engagement'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/classify-instagram-content:
     post:
-      summary: "Classify post content"
+      summary: Classify post content
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/classify-instagram-content"
+              $ref: '#/components/schemas/classify-instagram-content'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/instagram-caption-sentiment:
     post:
-      summary: "Caption sentiment analysis"
+      summary: Caption sentiment analysis
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/instagram-caption-sentiment"
+              $ref: '#/components/schemas/instagram-caption-sentiment'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/instagram-hashtag-extraction:
     post:
-      summary: "Extract hashtags"
+      summary: Extract hashtags
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/instagram-hashtag-extraction"
+              $ref: '#/components/schemas/instagram-hashtag-extraction'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/instagram-visual-trends:
     post:
-      summary: "Detect visual trends"
+      summary: Detect visual trends
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/instagram-visual-trends"
+              $ref: '#/components/schemas/instagram-visual-trends'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/instagram-follower-forecast:
     post:
-      summary: "Forecast follower growth"
+      summary: Forecast follower growth
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/instagram-follower-forecast"
+              $ref: '#/components/schemas/instagram-follower-forecast'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/instagram-anomaly-detection:
     post:
-      summary: "Detect engagement anomalies"
+      summary: Detect engagement anomalies
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/instagram-anomaly-detection"
+              $ref: '#/components/schemas/instagram-anomaly-detection'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/instagram-post-comparison:
     post:
-      summary: "Compare two post visuals"
+      summary: Compare two post visuals
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/instagram-post-comparison"
+              $ref: '#/components/schemas/instagram-post-comparison'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/instagram-content-clustering:
     post:
-      summary: "Cluster content themes"
+      summary: Cluster content themes
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/instagram-content-clustering"
+              $ref: '#/components/schemas/instagram-content-clustering'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/analyze-tiktok-thumbnails:
     post:
-      summary: "Analyze video thumbnails"
+      summary: Analyze video thumbnails
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/analyze-tiktok-thumbnails"
+              $ref: '#/components/schemas/analyze-tiktok-thumbnails'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/predict-tiktok-virality:
     post:
-      summary: "Predict video virality"
+      summary: Predict video virality
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/predict-tiktok-virality"
+              $ref: '#/components/schemas/predict-tiktok-virality'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/classify-tiktok-content:
     post:
-      summary: "Classify video content"
+      summary: Classify video content
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/classify-tiktok-content"
+              $ref: '#/components/schemas/classify-tiktok-content'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/tiktok-content-sentiment:
     post:
-      summary: "Content sentiment analysis"
+      summary: Content sentiment analysis
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/tiktok-content-sentiment"
+              $ref: '#/components/schemas/tiktok-content-sentiment'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/tiktok-trending-topics:
     post:
-      summary: "Extract trending topics"
+      summary: Extract trending topics
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/tiktok-trending-topics"
+              $ref: '#/components/schemas/tiktok-trending-topics'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/tiktok-view-patterns:
     post:
-      summary: "Detect view patterns"
+      summary: Detect view patterns
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/tiktok-view-patterns"
+              $ref: '#/components/schemas/tiktok-view-patterns'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/tiktok-follower-forecast:
     post:
-      summary: "Forecast follower growth"
+      summary: Forecast follower growth
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/tiktok-follower-forecast"
+              $ref: '#/components/schemas/tiktok-follower-forecast'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/tiktok-anomaly-detection:
     post:
-      summary: "Detect engagement anomalies"
+      summary: Detect engagement anomalies
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/tiktok-anomaly-detection"
+              $ref: '#/components/schemas/tiktok-anomaly-detection'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/tiktok-thumbnail-comparison:
     post:
-      summary: "Compare two thumbnails"
+      summary: Compare two thumbnails
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/tiktok-thumbnail-comparison"
+              $ref: '#/components/schemas/tiktok-thumbnail-comparison'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/tiktok-content-clustering:
     post:
-      summary: "Cluster video content"
+      summary: Cluster video content
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/tiktok-content-clustering"
+              $ref: '#/components/schemas/tiktok-content-clustering'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/twitter-content-keywords:
     post:
-      summary: "Analyze tweet content keywords"
+      summary: Analyze tweet content keywords
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/twitter-content-keywords"
+              $ref: '#/components/schemas/twitter-content-keywords'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/predict-twitter-engagement:
     post:
-      summary: "Predict tweet engagement"
+      summary: Predict tweet engagement
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/predict-twitter-engagement"
+              $ref: '#/components/schemas/predict-twitter-engagement'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/classify-twitter-topics:
     post:
-      summary: "Classify tweet topics"
+      summary: Classify tweet topics
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/classify-twitter-topics"
+              $ref: '#/components/schemas/classify-twitter-topics'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/twitter-toxicity-detection:
     post:
-      summary: "Detect toxic tweets"
+      summary: Detect toxic tweets
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/twitter-toxicity-detection"
+              $ref: '#/components/schemas/twitter-toxicity-detection'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/twitter-sentiment-analysis:
     post:
-      summary: "Tweet sentiment analysis"
+      summary: Tweet sentiment analysis
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/twitter-sentiment-analysis"
+              $ref: '#/components/schemas/twitter-sentiment-analysis'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/twitter-keyword-extraction:
     post:
-      summary: "Extract tweet keywords"
+      summary: Extract tweet keywords
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/twitter-keyword-extraction"
+              $ref: '#/components/schemas/twitter-keyword-extraction'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/twitter-follower-forecast:
     post:
-      summary: "Forecast follower growth"
+      summary: Forecast follower growth
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/twitter-follower-forecast"
+              $ref: '#/components/schemas/twitter-follower-forecast'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/twitter-anomaly-detection:
     post:
-      summary: "Detect engagement anomalies"
+      summary: Detect engagement anomalies
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/twitter-anomaly-detection"
+              $ref: '#/components/schemas/twitter-anomaly-detection'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/twitter-tweet-comparison:
     post:
-      summary: "Compare tweet similarity"
+      summary: Compare tweet similarity
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/twitter-tweet-comparison"
+              $ref: '#/components/schemas/twitter-tweet-comparison'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/twitter-topic-clustering:
     post:
-      summary: "Cluster tweet topics"
+      summary: Cluster tweet topics
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/twitter-topic-clustering"
+              $ref: '#/components/schemas/twitter-topic-clustering'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/analyze-facebook-content:
     post:
-      summary: "Analyze Facebook post content"
+      summary: Analyze Facebook post content
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/analyze-facebook-content"
+              $ref: '#/components/schemas/analyze-facebook-content'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/predict-facebook-engagement:
     post:
-      summary: "Predict post engagement"
+      summary: Predict post engagement
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/predict-facebook-engagement"
+              $ref: '#/components/schemas/predict-facebook-engagement'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/classify-facebook-topics:
     post:
-      summary: "Classify post topics"
+      summary: Classify post topics
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/classify-facebook-topics"
+              $ref: '#/components/schemas/classify-facebook-topics'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/facebook-comment-sentiment:
     post:
-      summary: "Comment sentiment analysis"
+      summary: Comment sentiment analysis
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/facebook-comment-sentiment"
+              $ref: '#/components/schemas/facebook-comment-sentiment'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/facebook-post-keywords:
     post:
-      summary: "Extract post keywords"
+      summary: Extract post keywords
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/facebook-post-keywords"
+              $ref: '#/components/schemas/facebook-post-keywords'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/facebook-posting-trends:
     post:
-      summary: "Detect posting trends"
+      summary: Detect posting trends
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/facebook-posting-trends"
+              $ref: '#/components/schemas/facebook-posting-trends'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/facebook-growth-forecast:
     post:
-      summary: "Forecast page growth"
+      summary: Forecast page growth
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/facebook-growth-forecast"
+              $ref: '#/components/schemas/facebook-growth-forecast'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/facebook-anomaly-detection:
     post:
-      summary: "Detect engagement anomalies"
+      summary: Detect engagement anomalies
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/facebook-anomaly-detection"
+              $ref: '#/components/schemas/facebook-anomaly-detection'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/facebook-visual-comparison:
     post:
-      summary: "Compare post visuals"
+      summary: Compare post visuals
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/facebook-visual-comparison"
+              $ref: '#/components/schemas/facebook-visual-comparison'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/facebook-content-clustering:
     post:
-      summary: "Cluster post content"
+      summary: Cluster post content
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/facebook-content-clustering"
+              $ref: '#/components/schemas/facebook-content-clustering'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/discord-sentiment-analysis:
     post:
-      summary: "Message sentiment analysis"
+      summary: Message sentiment analysis
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/discord-sentiment-analysis"
+              $ref: '#/components/schemas/discord-sentiment-analysis'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/discord-toxicity-detection:
     post:
-      summary: "Detect toxic messages"
+      summary: Detect toxic messages
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/discord-toxicity-detection"
+              $ref: '#/components/schemas/discord-toxicity-detection'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/predict-discord-engagement:
     post:
-      summary: "Predict message engagement"
+      summary: Predict message engagement
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/predict-discord-engagement"
+              $ref: '#/components/schemas/predict-discord-engagement'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/classify-discord-topics:
     post:
-      summary: "Classify message topics"
+      summary: Classify message topics
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/classify-discord-topics"
+              $ref: '#/components/schemas/classify-discord-topics'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/discord-keyword-extraction:
     post:
-      summary: "Extract keywords"
+      summary: Extract keywords
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/discord-keyword-extraction"
+              $ref: '#/components/schemas/discord-keyword-extraction'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/discord-activity-patterns:
     post:
-      summary: "Detect activity patterns"
+      summary: Detect activity patterns
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/discord-activity-patterns"
+              $ref: '#/components/schemas/discord-activity-patterns'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/discord-growth-forecast:
     post:
-      summary: "Forecast growth"
+      summary: Forecast growth
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/discord-growth-forecast"
+              $ref: '#/components/schemas/discord-growth-forecast'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/discord-anomaly-detection:
     post:
-      summary: "Detect anomalies"
+      summary: Detect anomalies
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/discord-anomaly-detection"
+              $ref: '#/components/schemas/discord-anomaly-detection'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/discord-channel-comparison:
     post:
-      summary: "Compare two channels"
+      summary: Compare two channels
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/discord-channel-comparison"
+              $ref: '#/components/schemas/discord-channel-comparison'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/discord-member-clustering:
     post:
-      summary: "Cluster members by activity"
+      summary: Cluster members by activity
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/discord-member-clustering"
+              $ref: '#/components/schemas/discord-member-clustering'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/analyze-twitch-content:
     post:
-      summary: "Analyze stream content"
+      summary: Analyze stream content
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/analyze-twitch-content"
+              $ref: '#/components/schemas/analyze-twitch-content'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/predict-twitch-viewers:
     post:
-      summary: "Predict viewer count"
+      summary: Predict viewer count
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/predict-twitch-viewers"
+              $ref: '#/components/schemas/predict-twitch-viewers'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/classify-twitch-games:
     post:
-      summary: "Classify game content"
+      summary: Classify game content
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/classify-twitch-games"
+              $ref: '#/components/schemas/classify-twitch-games'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/twitch-chat-sentiment:
     post:
-      summary: "Chat sentiment analysis"
+      summary: Chat sentiment analysis
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/twitch-chat-sentiment"
+              $ref: '#/components/schemas/twitch-chat-sentiment'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/twitch-keyword-extraction:
     post:
-      summary: "Extract keywords"
+      summary: Extract keywords
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/twitch-keyword-extraction"
+              $ref: '#/components/schemas/twitch-keyword-extraction'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/twitch-viewer-trends:
     post:
-      summary: "Detect viewer trends"
+      summary: Detect viewer trends
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/twitch-viewer-trends"
+              $ref: '#/components/schemas/twitch-viewer-trends'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/twitch-growth-forecast:
     post:
-      summary: "Forecast growth"
+      summary: Forecast growth
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/twitch-growth-forecast"
+              $ref: '#/components/schemas/twitch-growth-forecast'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/twitch-anomaly-detection:
     post:
-      summary: "Detect anomalies"
+      summary: Detect anomalies
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/twitch-anomaly-detection"
+              $ref: '#/components/schemas/twitch-anomaly-detection'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/twitch-clip-comparison:
     post:
-      summary: "Compare two clips"
+      summary: Compare two clips
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/twitch-clip-comparison"
+              $ref: '#/components/schemas/twitch-clip-comparison'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/twitch-stream-clustering:
     post:
-      summary: "Cluster streams"
+      summary: Cluster streams
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/twitch-stream-clustering"
+              $ref: '#/components/schemas/twitch-stream-clustering'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/reddit-sentiment-analysis:
     post:
-      summary: "Post sentiment analysis"
+      summary: Post sentiment analysis
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/reddit-sentiment-analysis"
+              $ref: '#/components/schemas/reddit-sentiment-analysis'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/reddit-toxicity-detection:
     post:
-      summary: "Detect toxic posts"
+      summary: Detect toxic posts
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/reddit-toxicity-detection"
+              $ref: '#/components/schemas/reddit-toxicity-detection'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/predict-reddit-engagement:
     post:
-      summary: "Predict post engagement"
+      summary: Predict post engagement
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/predict-reddit-engagement"
+              $ref: '#/components/schemas/predict-reddit-engagement'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/classify-reddit-topics:
     post:
-      summary: "Classify post topics"
+      summary: Classify post topics
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/classify-reddit-topics"
+              $ref: '#/components/schemas/classify-reddit-topics'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/reddit-keyword-extraction:
     post:
-      summary: "Extract keywords"
+      summary: Extract keywords
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/reddit-keyword-extraction"
+              $ref: '#/components/schemas/reddit-keyword-extraction'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/reddit-trend-detection:
     post:
-      summary: "Detect trends"
+      summary: Detect trends
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/reddit-trend-detection"
+              $ref: '#/components/schemas/reddit-trend-detection'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/reddit-growth-forecast:
     post:
-      summary: "Forecast growth"
+      summary: Forecast growth
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/reddit-growth-forecast"
+              $ref: '#/components/schemas/reddit-growth-forecast'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/reddit-anomaly-detection:
     post:
-      summary: "Detect anomalies"
+      summary: Detect anomalies
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/reddit-anomaly-detection"
+              $ref: '#/components/schemas/reddit-anomaly-detection'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/reddit-post-comparison:
     post:
-      summary: "Compare two posts"
+      summary: Compare two posts
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/reddit-post-comparison"
+              $ref: '#/components/schemas/reddit-post-comparison'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/reddit-community-clustering:
     post:
-      summary: "Cluster community posts"
+      summary: Cluster community posts
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/reddit-community-clustering"
+              $ref: '#/components/schemas/reddit-community-clustering'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/linkedin-sentiment-analysis:
     post:
-      summary: "Post sentiment analysis"
+      summary: Post sentiment analysis
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/linkedin-sentiment-analysis"
+              $ref: '#/components/schemas/linkedin-sentiment-analysis'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/predict-linkedin-engagement:
     post:
-      summary: "Predict engagement"
+      summary: Predict engagement
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/predict-linkedin-engagement"
+              $ref: '#/components/schemas/predict-linkedin-engagement'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/classify-linkedin-topics:
     post:
-      summary: "Classify post topics"
+      summary: Classify post topics
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/classify-linkedin-topics"
+              $ref: '#/components/schemas/classify-linkedin-topics'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/linkedin-keyword-extraction:
     post:
-      summary: "Extract keywords"
+      summary: Extract keywords
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/linkedin-keyword-extraction"
+              $ref: '#/components/schemas/linkedin-keyword-extraction'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/linkedin-trend-detection:
     post:
-      summary: "Detect trends"
+      summary: Detect trends
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/linkedin-trend-detection"
+              $ref: '#/components/schemas/linkedin-trend-detection'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/linkedin-growth-forecast:
     post:
-      summary: "Forecast growth"
+      summary: Forecast growth
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/linkedin-growth-forecast"
+              $ref: '#/components/schemas/linkedin-growth-forecast'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/linkedin-anomaly-detection:
     post:
-      summary: "Detect anomalies"
+      summary: Detect anomalies
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/linkedin-anomaly-detection"
+              $ref: '#/components/schemas/linkedin-anomaly-detection'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/linkedin-post-comparison:
     post:
-      summary: "Compare two posts"
+      summary: Compare two posts
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/linkedin-post-comparison"
+              $ref: '#/components/schemas/linkedin-post-comparison'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/linkedin-content-clustering:
     post:
-      summary: "Cluster content"
+      summary: Cluster content
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/linkedin-content-clustering"
+              $ref: '#/components/schemas/linkedin-content-clustering'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/linkedin-audience-segmentation:
     post:
-      summary: "Analyze audience"
+      summary: Analyze audience
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/linkedin-audience-segmentation"
+              $ref: '#/components/schemas/linkedin-audience-segmentation'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/threads-sentiment-analysis:
     post:
-      summary: "Post sentiment analysis"
+      summary: Post sentiment analysis
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/threads-sentiment-analysis"
+              $ref: '#/components/schemas/threads-sentiment-analysis'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/threads-toxicity-detection:
     post:
-      summary: "Detect toxic posts"
+      summary: Detect toxic posts
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/threads-toxicity-detection"
+              $ref: '#/components/schemas/threads-toxicity-detection'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/predict-threads-engagement:
     post:
-      summary: "Predict engagement"
+      summary: Predict engagement
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/predict-threads-engagement"
+              $ref: '#/components/schemas/predict-threads-engagement'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/classify-threads-topics:
     post:
-      summary: "Classify post topics"
+      summary: Classify post topics
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/classify-threads-topics"
+              $ref: '#/components/schemas/classify-threads-topics'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/threads-keyword-extraction:
     post:
-      summary: "Extract keywords"
+      summary: Extract keywords
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/threads-keyword-extraction"
+              $ref: '#/components/schemas/threads-keyword-extraction'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/threads-trend-detection:
     post:
-      summary: "Detect trends"
+      summary: Detect trends
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/threads-trend-detection"
+              $ref: '#/components/schemas/threads-trend-detection'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/threads-growth-forecast:
     post:
-      summary: "Forecast growth"
+      summary: Forecast growth
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/threads-growth-forecast"
+              $ref: '#/components/schemas/threads-growth-forecast'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/threads-anomaly-detection:
     post:
-      summary: "Detect anomalies"
+      summary: Detect anomalies
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/threads-anomaly-detection"
+              $ref: '#/components/schemas/threads-anomaly-detection'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/threads-post-comparison:
     post:
-      summary: "Compare two posts"
+      summary: Compare two posts
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/threads-post-comparison"
+              $ref: '#/components/schemas/threads-post-comparison'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/threads-content-clustering:
     post:
-      summary: "Cluster content"
+      summary: Cluster content
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/threads-content-clustering"
+              $ref: '#/components/schemas/threads-content-clustering'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/bluesky-sentiment-analysis:
     post:
-      summary: "Post sentiment analysis"
+      summary: Post sentiment analysis
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/bluesky-sentiment-analysis"
+              $ref: '#/components/schemas/bluesky-sentiment-analysis'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/bluesky-toxicity-detection:
     post:
-      summary: "Detect toxic posts"
+      summary: Detect toxic posts
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/bluesky-toxicity-detection"
+              $ref: '#/components/schemas/bluesky-toxicity-detection'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/predict-bluesky-engagement:
     post:
-      summary: "Predict engagement"
+      summary: Predict engagement
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/predict-bluesky-engagement"
+              $ref: '#/components/schemas/predict-bluesky-engagement'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/classify-bluesky-topics:
     post:
-      summary: "Classify post topics"
+      summary: Classify post topics
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/classify-bluesky-topics"
+              $ref: '#/components/schemas/classify-bluesky-topics'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/bluesky-keyword-extraction:
     post:
-      summary: "Extract keywords"
+      summary: Extract keywords
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/bluesky-keyword-extraction"
+              $ref: '#/components/schemas/bluesky-keyword-extraction'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/bluesky-trend-detection:
     post:
-      summary: "Detect trends"
+      summary: Detect trends
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/bluesky-trend-detection"
+              $ref: '#/components/schemas/bluesky-trend-detection'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/bluesky-growth-forecast:
     post:
-      summary: "Forecast growth"
+      summary: Forecast growth
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/bluesky-growth-forecast"
+              $ref: '#/components/schemas/bluesky-growth-forecast'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/bluesky-anomaly-detection:
     post:
-      summary: "Detect anomalies"
+      summary: Detect anomalies
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/bluesky-anomaly-detection"
+              $ref: '#/components/schemas/bluesky-anomaly-detection'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/bluesky-post-comparison:
     post:
-      summary: "Compare two posts"
+      summary: Compare two posts
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/bluesky-post-comparison"
+              $ref: '#/components/schemas/bluesky-post-comparison'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/bluesky-content-clustering:
     post:
-      summary: "Cluster content"
+      summary: Cluster content
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/bluesky-content-clustering"
+              $ref: '#/components/schemas/bluesky-content-clustering'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/mastodon-sentiment-analysis:
     post:
-      summary: "Status sentiment analysis"
+      summary: Status sentiment analysis
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/mastodon-sentiment-analysis"
+              $ref: '#/components/schemas/mastodon-sentiment-analysis'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/mastodon-toxicity-detection:
     post:
-      summary: "Detect toxic statuses"
+      summary: Detect toxic statuses
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/mastodon-toxicity-detection"
+              $ref: '#/components/schemas/mastodon-toxicity-detection'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/predict-mastodon-engagement:
     post:
-      summary: "Predict engagement"
+      summary: Predict engagement
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/predict-mastodon-engagement"
+              $ref: '#/components/schemas/predict-mastodon-engagement'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/classify-mastodon-topics:
     post:
-      summary: "Classify status topics"
+      summary: Classify status topics
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/classify-mastodon-topics"
+              $ref: '#/components/schemas/classify-mastodon-topics'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/mastodon-keyword-extraction:
     post:
-      summary: "Extract keywords"
+      summary: Extract keywords
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/mastodon-keyword-extraction"
+              $ref: '#/components/schemas/mastodon-keyword-extraction'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/mastodon-trend-detection:
     post:
-      summary: "Detect trends"
+      summary: Detect trends
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/mastodon-trend-detection"
+              $ref: '#/components/schemas/mastodon-trend-detection'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/mastodon-growth-forecast:
     post:
-      summary: "Forecast growth"
+      summary: Forecast growth
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/mastodon-growth-forecast"
+              $ref: '#/components/schemas/mastodon-growth-forecast'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/mastodon-anomaly-detection:
     post:
-      summary: "Detect anomalies"
+      summary: Detect anomalies
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/mastodon-anomaly-detection"
+              $ref: '#/components/schemas/mastodon-anomaly-detection'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/mastodon-status-comparison:
     post:
-      summary: "Compare two statuses"
+      summary: Compare two statuses
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/mastodon-status-comparison"
+              $ref: '#/components/schemas/mastodon-status-comparison'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/mastodon-content-clustering:
     post:
-      summary: "Cluster content"
+      summary: Cluster content
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/mastodon-content-clustering"
+              $ref: '#/components/schemas/mastodon-content-clustering'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/github-issue-sentiment:
     post:
-      summary: "Issue sentiment analysis"
+      summary: Issue sentiment analysis
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/github-issue-sentiment"
+              $ref: '#/components/schemas/github-issue-sentiment'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/classify-github-issues:
     post:
-      summary: "Classify issue topics"
+      summary: Classify issue topics
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/classify-github-issues"
+              $ref: '#/components/schemas/classify-github-issues'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/github-keyword-extraction:
     post:
-      summary: "Extract keywords"
+      summary: Extract keywords
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/github-keyword-extraction"
+              $ref: '#/components/schemas/github-keyword-extraction'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/github-trend-detection:
     post:
-      summary: "Detect trends"
+      summary: Detect trends
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/github-trend-detection"
+              $ref: '#/components/schemas/github-trend-detection'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/github-growth-forecast:
     post:
-      summary: "Forecast growth"
+      summary: Forecast growth
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/github-growth-forecast"
+              $ref: '#/components/schemas/github-growth-forecast'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/github-anomaly-detection:
     post:
-      summary: "Detect anomalies"
+      summary: Detect anomalies
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/github-anomaly-detection"
+              $ref: '#/components/schemas/github-anomaly-detection'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/github-repo-comparison:
     post:
-      summary: "Compare two repos"
+      summary: Compare two repos
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/github-repo-comparison"
+              $ref: '#/components/schemas/github-repo-comparison'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/github-issue-clustering:
     post:
-      summary: "Cluster issues"
+      summary: Cluster issues
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/github-issue-clustering"
+              $ref: '#/components/schemas/github-issue-clustering'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/predict-github-issue-engagement:
     post:
-      summary: "Predict issue engagement"
+      summary: Predict issue engagement
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/predict-github-issue-engagement"
+              $ref: '#/components/schemas/predict-github-issue-engagement'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/github-contributor-patterns:
     post:
-      summary: "Analyze contributor patterns"
+      summary: Analyze contributor patterns
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/github-contributor-patterns"
+              $ref: '#/components/schemas/github-contributor-patterns'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/spotify-track-sentiment:
     post:
-      summary: "Analyze track mood/sentiment"
+      summary: Analyze track mood/sentiment
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/spotify-track-sentiment"
+              $ref: '#/components/schemas/spotify-track-sentiment'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/spotify-genre-classification:
     post:
-      summary: "Classify genre from audio features"
+      summary: Classify genre from audio features
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/spotify-genre-classification"
+              $ref: '#/components/schemas/spotify-genre-classification'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/predict-spotify-popularity:
     post:
-      summary: "Predict track popularity"
+      summary: Predict track popularity
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/predict-spotify-popularity"
+              $ref: '#/components/schemas/predict-spotify-popularity'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/spotify-audio-keywords:
     post:
-      summary: "Extract audio keywords"
+      summary: Extract audio keywords
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/spotify-audio-keywords"
+              $ref: '#/components/schemas/spotify-audio-keywords'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/spotify-trend-detection:
     post:
-      summary: "Detect music trends"
+      summary: Detect music trends
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/spotify-trend-detection"
+              $ref: '#/components/schemas/spotify-trend-detection'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/spotify-growth-forecast:
     post:
-      summary: "Forecast growth"
+      summary: Forecast growth
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/spotify-growth-forecast"
+              $ref: '#/components/schemas/spotify-growth-forecast'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/spotify-anomaly-detection:
     post:
-      summary: "Detect anomalies"
+      summary: Detect anomalies
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/spotify-anomaly-detection"
+              $ref: '#/components/schemas/spotify-anomaly-detection'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/spotify-track-comparison:
     post:
-      summary: "Compare two tracks"
+      summary: Compare two tracks
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/spotify-track-comparison"
+              $ref: '#/components/schemas/spotify-track-comparison'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/spotify-playlist-clustering:
     post:
-      summary: "Cluster playlist tracks"
+      summary: Cluster playlist tracks
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/spotify-playlist-clustering"
+              $ref: '#/components/schemas/spotify-playlist-clustering'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/spotify-audio-analysis:
     post:
-      summary: "Deep audio feature analysis"
+      summary: Deep audio feature analysis
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/spotify-audio-analysis"
+              $ref: '#/components/schemas/spotify-audio-analysis'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/analyze-pinterest-images:
     post:
-      summary: "Analyze pin images"
+      summary: Analyze pin images
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/analyze-pinterest-images"
+              $ref: '#/components/schemas/analyze-pinterest-images'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/predict-pinterest-engagement:
     post:
-      summary: "Predict pin engagement"
+      summary: Predict pin engagement
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/predict-pinterest-engagement"
+              $ref: '#/components/schemas/predict-pinterest-engagement'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/classify-pinterest-content:
     post:
-      summary: "Classify pin content"
+      summary: Classify pin content
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/classify-pinterest-content"
+              $ref: '#/components/schemas/classify-pinterest-content'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/pinterest-keyword-extraction:
     post:
-      summary: "Extract keywords"
+      summary: Extract keywords
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/pinterest-keyword-extraction"
+              $ref: '#/components/schemas/pinterest-keyword-extraction'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/pinterest-trend-detection:
     post:
-      summary: "Detect trends"
+      summary: Detect trends
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/pinterest-trend-detection"
+              $ref: '#/components/schemas/pinterest-trend-detection'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/pinterest-growth-forecast:
     post:
-      summary: "Forecast growth"
+      summary: Forecast growth
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/pinterest-growth-forecast"
+              $ref: '#/components/schemas/pinterest-growth-forecast'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/pinterest-anomaly-detection:
     post:
-      summary: "Detect anomalies"
+      summary: Detect anomalies
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/pinterest-anomaly-detection"
+              $ref: '#/components/schemas/pinterest-anomaly-detection'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/pinterest-pin-comparison:
     post:
-      summary: "Compare two pins"
+      summary: Compare two pins
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/pinterest-pin-comparison"
+              $ref: '#/components/schemas/pinterest-pin-comparison'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/pinterest-board-clustering:
     post:
-      summary: "Cluster boards"
+      summary: Cluster boards
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/pinterest-board-clustering"
+              $ref: '#/components/schemas/pinterest-board-clustering'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
   /tools/pinterest-audience-analysis:
     post:
-      summary: "Analyze audience"
+      summary: Analyze audience
       requestBody:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/pinterest-audience-analysis"
+              $ref: '#/components/schemas/pinterest-audience-analysis'
       responses:
-        "200":
+        '200':
           description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SentimentResponse'
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
+        '500':
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ErrorResponse'
 components:
   schemas:
+    SentimentResponse:
+      type: object
+      properties:
+        score:
+          type: number
+        sentiment:
+          type: string
+      required:
+        - score
+        - sentiment
+    AnomalyDetectionResponse:
+      type: object
+      properties:
+        value:
+          type: number
+        isAnomaly:
+          type: boolean
+        error:
+          type: number
+      required:
+        - value
+        - isAnomaly
+    TrendDetectionResponse:
+      type: object
+      properties:
+        trend:
+          type: string
+        averageChange:
+          type: number
+      required:
+        - trend
+    EngagementPredictionResponse:
+      type: object
+      properties:
+        engagementScore:
+          type: number
+      required:
+        - engagementScore
+    KeywordExtractionResponse:
+      type: object
+      properties:
+        term:
+          type: string
+        score:
+          type: number
+      required:
+        - term
+        - score
+    ErrorResponse:
+      type: object
+      properties:
+        error:
+          type: string
+        code:
+          type: string
+      required:
+        - error
     analyze-image:
       type: object
       properties:
