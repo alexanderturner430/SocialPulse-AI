@@ -1,0 +1,12 @@
+{
+  "mcp.so": {
+    "status": "manual",
+    "submittedAt": "2026-09-04T20:18:54.381Z",
+    "note": "Submit https://cables.live/http at https://mcp.so/submit?type=remote-server"
+  },
+  "smithery": {
+    "status": "skipped",
+    "submittedAt": "2026-09-04T20:18:54.404Z",
+    "note": "SMITHERY_API_KEY not set"
+  }
+}
