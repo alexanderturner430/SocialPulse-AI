@@ -34,6 +34,7 @@ const tfPinterest = require("./lib/tf-pinterest");
 const x402 = require("./lib/x402");
 const monitor = require("./lib/monitor");
 const toolRegistry = require("./lib/tool-registry");
+const { validateToolInput } = require("./lib/validator");
 
 const app = express();
 
@@ -656,56 +657,42 @@ async function dispatchTool(name, args) {
   return { content: [{ type: "text", text: JSON.stringify(result, null, 2) }] };
 }
 
+const { mlQueue } = require("./lib/queue");
+
+// ...
+
 async function handleCallTool(request) {
   const { name, arguments: args } = request.params;
 
-  const x402State = x402.getConfig();
-  const { config, facilitatorClient } = x402State;
-  const toolDef = toolDefinitions.find((t) => t.name === name);
-
-  let paymentPayload = null;
-  const metaPayment = request.params._meta && request.params._meta["x402/payment"];
-  if (metaPayment && typeof metaPayment === "object") {
-    paymentPayload = metaPayment;
+  // Validate input
+  const validation = validateToolInput(name, args);
+  if (!validation.success) {
+    return { 
+      content: [{ type: "text", text: JSON.stringify({ error: `Validation error: ${validation.error}` }) }], 
+      isError: true 
+    };
   }
+  const validatedArgs = validation.data;
 
-  if (!x402.isGateEnabled()) {
-    try {
-      const result = await dispatchTool(name, args);
-      monitor.recordRequest({ kind: "mcp", tool: name, status: "paid" });
-      return result;
-    } catch (error) {
-      monitor.recordRequest({ kind: "mcp", tool: name, status: "error", error: error.message });
-      return { content: [{ type: "text", text: JSON.stringify({ error: error.message }) }], isError: true };
-    }
-  }
-
-  if (!paymentPayload) {
-    monitor.recordRequest({ kind: "mcp", tool: name, status: "unpaid" });
-    const paymentRequired = x402.buildPaymentRequired(
-      name,
-      toolDef ? toolDef.description : "ML analytics tool",
-      config
-    );
-    return x402.mcpPaymentRequiredResult(paymentRequired);
-  }
-
-  const start = Date.now();
-  try {
-    const verifyResponse = await facilitatorClient.verify(
-      paymentPayload,
-      paymentPayload.accepted
-    );
-    if (verifyResponse && verifyResponse.isValid === false) {
-      monitor.recordRequest({ kind: "mcp", tool: name, status: "unpaid", latMs: Date.now() - start });
-      return x402.mcpPaymentRequiredResult(
-        x402.buildPaymentRequired(
-          name,
-          toolDef ? toolDef.description : "ML analytics tool",
-          config
-        )
-      );
-    }
+  // Enqueue job
+  const jobId = randomUUID();
+  await mlQueue.add(
+    "inference",
+    { toolName: name, args: validatedArgs, jobId },
+    { jobId }
+  );
+  
+  return {
+    content: [{
+      type: "text",
+      text: JSON.stringify({
+        status: "pending",
+        jobId,
+        message: "Job enqueued. Poll /api/v1/jobs/:jobId for status."
+      })
+    }]
+  };
+}
 
     const result = await dispatchTool(name, args);
     monitor.recordRequest({ kind: "mcp", tool: name, status: "paid", latMs: Date.now() - start });
@@ -966,7 +953,7 @@ app.get("/.well-known/x402", (req, res) => {
 
 // === x402 status & control endpoints (localhost-only TUI integration) ===
 const SERVER_START_TIME = Date.now();
-const SERVER_PORT = parseInt(process.env.PORT, 10) || 6350;
+const SERVER_PORT = parseInt(process.env.PORT, 10) || 5100;
 const LOOPBACK_ADDRESSES = new Set(["127.0.0.1", "::1", "::ffff:127.0.0.1"]);
 
 function isLoopbackRequest(req) {

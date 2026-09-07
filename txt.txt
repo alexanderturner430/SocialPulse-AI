@@ -1,0 +1,10 @@
+
+   1. Terminal 1 (Worker): node worker.js
+   2. Terminal 2 (API Server): node rest-api.js
+
+   npm run check:mcp / npm run submit:mcp
+
+   npm run check:mcp
+   npm run submit:mcp https://your-public-origin
+
+   ./scripts/x402-register.sh register https://cables.live
