@@ -7,7 +7,7 @@ jest.mock("../lib/sentiment");
 const { fetchAndAnalyzeComments } = require("../lib/comments");
 const api = require("../lib/api");
 const { analyzeSentiment } = require("../lib/sentiment");
-const db = require("./mocks/db");
+const db = require("../lib/db");
 
 describe("comments", () => {
   test("fetchAndAnalyzeComments fetches, analyzes, and saves comments", async () => {
