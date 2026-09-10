@@ -61,25 +61,13 @@ The server exposes an OpenAPI 3.0 specification at `http://localhost:6350/openap
 
 See `readme.txt` in the root for a summary of available endpoints.
 
-## Deployment & Setup
-
-1. Copy `.env.example` to `.env`:
-   ```bash
-   cp .env.example .env
-   ```
-2. Open `.env` and configure the required environment variables:
-   - `PAY_TO_ADDRESS`: Your Solana wallet address for receiving payments.
-3. Install dependencies:
-   ```bash
-   npm install
-   ```
-4. Start the server (e.g., using `ecosystem.config.js` or directly):
-   ```bash
-   npm start
-   ```
-
 ## Contributing
-...
+
+1. Fork the repository.
+2. Create your feature branch.
+3. Commit your changes.
+4. Push to the branch.
+5. Open a Pull Request.
 
 #
 

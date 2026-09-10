@@ -1,0 +1,15 @@
+{
+  "server": "tensorflow-social-mcp",
+  "version": "2.0.0",
+  "description": "TensorFlow.js Social Media MCP Server - ML-powered analytics",
+  "transports": {
+    "sse": "/mcp",
+    "http": "/http"
+  },
+  "discovery": {
+    "toolsEndpoint": "/api/v1/tools",
+    "openapi": "/openapi.json",
+    "wellKnown": "/.well-known/x402"
+  },
+  "note": "For a full list of available tools, query the 'toolsEndpoint' or refer to MCP_DOCUMENTATION.md."
+}

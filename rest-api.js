@@ -36,9 +36,7 @@ apiRouter.get("/jobs/:jobId", async (req, res) => {
 
 app.use("/api/v1", apiRouter);
 
-const logger = require("./lib/logger");
-
-const PORT = 5100;
+const PORT = 7300;
 app.listen(PORT, () => {
-  logger.info(`REST API server running at http://localhost:${PORT}`);
+  console.log(`REST API server running at http://localhost:${PORT}`);
 });
