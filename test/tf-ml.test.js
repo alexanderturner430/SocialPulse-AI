@@ -6,6 +6,8 @@ const mockTensor = {
   max: jest.fn(() => mockTensor),
   sub: jest.fn(() => mockTensor),
   div: jest.fn(() => mockTensor),
+  square: jest.fn(() => mockTensor),
+  mean: jest.fn(() => mockTensor),
   dataSync: jest.fn(() => [0.1, 0.2])
 };
 
