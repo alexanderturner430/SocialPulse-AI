@@ -4,6 +4,7 @@
   "description": "TensorFlow.js Social Media MCP Server - ML-powered analytics for YouTube, Instagram, TikTok, Twitter, Facebook, Discord, Twitch, Reddit, LinkedIn, Threads, Bluesky, Mastodon, GitHub, Spotify, Pinterest",
   "main": "index.js",
   "scripts": {
+    "build": "mkdir -p dist && cp -r *.js scripts dist/ && npm run check",
     "start": "node index.js",
     "tui": "node tui.mjs",
     "mcp": "node mcp-server.js",
