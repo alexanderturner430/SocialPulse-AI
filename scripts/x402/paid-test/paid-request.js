@@ -16,10 +16,11 @@
 //      ExpressAdapter + `paymentHeader` var)
 //
 // USAGE:
-//   node paid-request.js <endpoint> [payer.json]
+//   node paid-request.js <endpoint> [payer.json] [bodyJson]
 //
 // Examples:
 //   node paid-request.js http://127.0.0.1:6360/api/v1/tools/analyze-text/sync
+//   node paid-request.js http://127.0.0.1:6360/api/v1/tools/predict-trend/sync payer.json '{"dataPoints":[1,2,3,4]}'
 //
 // The payer wallet (payer.json) must already hold devnet SOL + devnet USDC.
 // ============================================================================
@@ -50,6 +51,16 @@ async function main() {
   const endpoint = process.argv[2] ||
     "http://127.0.0.1:6360/api/v1/tools/analyze-text/sync";
   const payerFile = process.argv[3] || path.join(__dirname, "payer.json");
+  // Optional body override; default matches analyze-text (the original harness tool).
+  let requestBody = { text: "hello world" };
+  if (process.argv[4]) {
+    try {
+      requestBody = JSON.parse(process.argv[4]);
+    } catch (e) {
+      console.error("Invalid bodyJson (must be JSON):", process.argv[4]);
+      process.exit(1);
+    }
+  }
 
   // ---- 1. Load the freshly generated payer keypair -------------------------
   let payer;
@@ -78,11 +89,11 @@ async function main() {
 
   // ---- 3. STEP 1: Fetch the 402 challenge ----------------------------------
   console.log("\n=== STEP 1: Fetch 402 challenge ===");
-  console.log("  POST", endpoint, '{"text":"hello world"}');
+  console.log("  POST", endpoint, JSON.stringify(requestBody));
   const resp = await fetch(endpoint, {
     method: "POST",
     headers: { "content-type": "application/json" },
-    body: JSON.stringify({ text: "hello world" }),
+    body: JSON.stringify(requestBody),
   });
   const payReqHeader = resp.headers.get("PAYMENT-REQUIRED");
   console.log("  HTTP status:", resp.status);
@@ -125,7 +136,7 @@ async function main() {
       "content-type": "application/json",
       "payment-signature": headerValue, // case-insensitive; @x402/express reads it
     },
-    body: JSON.stringify({ text: "hello world" }),
+    body: JSON.stringify(requestBody),
   });
 
   console.log("  HTTP status:", paidResp.status);
