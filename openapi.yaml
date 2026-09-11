@@ -5,7 +5,7 @@ info:
 paths:
   /tools/analyze-image:
     post:
-      summary: Classify image content using MobileNet
+      summary: MobileNet Image Classification
       requestBody:
         content:
           application/json:
@@ -30,9 +30,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Takes an image URL (imageUrl) and runs it through a pre-trained MobileNet model to classify visual content and detect high-level concepts/objects.
   /tools/detect-objects:
     post:
-      summary: Detect objects in image using COCO-SSD
+      summary: COCO-SSD Object Detection
       requestBody:
         content:
           application/json:
@@ -57,9 +58,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Identifies and localizes common objects within an image (imageUrl) using a COCO-SSD object detection model.
   /tools/detect-faces:
     post:
-      summary: Detect faces with age/gender/emotion analysis
+      summary: Facial Feature & Demographic Analysis
       requestBody:
         content:
           application/json:
@@ -84,9 +86,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Detects faces in an image (imageUrl) and infers estimated attributes such as age, gender, and emotion/expressions.'
   /tools/classify-image:
     post:
-      summary: Classify image against custom labels
+      summary: Custom Label Image Classification
       requestBody:
         content:
           application/json:
@@ -111,9 +114,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Evaluates an image (imageUrl) against a caller-provided list of custom candidate categories (labels).
   /tools/analyze-text:
     post:
-      summary: Analyze text content with NLP
+      summary: General NLP Text Analysis
       requestBody:
         content:
           application/json:
@@ -138,9 +142,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Processes a block of input text to extract syntactic structures, key terms, and textual characteristics.'
   /tools/extract-keywords:
     post:
-      summary: Extract keywords from text using ML
+      summary: ML Keyword Extraction
       requestBody:
         content:
           application/json:
@@ -165,9 +170,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Extracts the most salient keywords and keyphrases from the input text, with an optional target count (numKeywords).'
   /tools/detect-sentiment:
     post:
-      summary: Analyze sentiment of text
+      summary: Text Sentiment Detection
       requestBody:
         content:
           application/json:
@@ -192,9 +198,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Evaluates the emotional tone of the provided text to classify it as positive, negative, or neutral along with a confidence score.'
   /tools/detect-toxicity:
     post:
-      summary: Detect toxic/offensive language
+      summary: Toxicity & Offensiveness Detection
       requestBody:
         content:
           application/json:
@@ -219,9 +226,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Checks the input text for toxicity, harassment, obscenities, insults, or offensive language.'
   /tools/embed-text:
     post:
-      summary: Generate text embeddings
+      summary: Text Embedding Generation
       requestBody:
         content:
           application/json:
@@ -246,9 +254,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Converts the input text into a dense vector embedding suitable for similarity search or semantic matching.
   /tools/answer-question:
     post:
-      summary: Extractive QA from context
+      summary: Extractive Question Answering
       requestBody:
         content:
           application/json:
@@ -273,9 +282,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Extracts a concise answer to a user query (question) based exclusively on the provided reference passage (context).
   /tools/predict-trend:
     post:
-      summary: Predict trend from data points
+      summary: Trend Prediction
       requestBody:
         content:
           application/json:
@@ -300,9 +310,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Analyzes a series of chronological numeric data points (dataPoints) to identify the directional trend (e.g., upward, downward, flat).'
   /tools/forecast-data:
     post:
-      summary: Forecast time series data
+      summary: Time Series Forecasting
       requestBody:
         content:
           application/json:
@@ -327,9 +338,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Projects future values across a specified number of intervals (periods) using historical numeric data points (dataPoints).
   /tools/detect-anomalies:
     post:
-      summary: Detect anomalies in data
+      summary: Outlier & Anomaly Detection
       requestBody:
         content:
           application/json:
@@ -354,9 +366,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Scans a sequence of numeric data points (dataPoints) to flag statistical anomalies or outlier spikes/drops.
   /tools/cluster-data:
     post:
-      summary: K-Means clustering
+      summary: K-Means Data Clustering
       requestBody:
         content:
           application/json:
@@ -381,9 +394,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Partitions multi-dimensional data vectors (dataPoints) into a user-specified number of distinct groups (k).
   /tools/reduce-dimensions:
     post:
-      summary: PCA dimensionality reduction
+      summary: PCA Dimensionality Reduction
       requestBody:
         content:
           application/json:
@@ -408,9 +422,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Applies Principal Component Analysis (PCA) on high-dimensional vectors (dataPoints) to project them into fewer target dimensions.
   /tools/regression:
     post:
-      summary: Neural network regression
+      summary: Neural Network Regression
       requestBody:
         content:
           application/json:
@@ -435,9 +450,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Fits a regression neural network on continuous numeric coordinates (dataPoints) to model relationships and output predictions.
   /tools/train-model:
     post:
-      summary: Train a KNN model
+      summary: K-Nearest Neighbors (KNN) Model Training
       requestBody:
         content:
           application/json:
@@ -462,9 +478,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Trains an on-the-fly KNN classification/regression model given an array of input features, corresponding labels, and training epochs.'
   /tools/ab-test:
     post:
-      summary: Statistical A/B test analysis
+      summary: A/B Test Statistical Analysis
       requestBody:
         content:
           application/json:
@@ -489,9 +506,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Compares conversion or metric performance between two sample groups (groupA and groupB) to evaluate statistical significance.
   /tools/analyze-youtube-thumbnails:
     post:
-      summary: Analyze channel thumbnails for engagement
+      summary: Channel Thumbnail Analysis
       requestBody:
         content:
           application/json:
@@ -516,9 +534,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Analyzes a list of thumbnail image URLs (imageUrls) to evaluate visual appeal, composition, and expected engagement.'
   /tools/classify-youtube-content:
     post:
-      summary: Classify video content types
+      summary: Video Content Classification
       requestBody:
         content:
           application/json:
@@ -543,9 +562,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Categorizes YouTube titles/descriptions (texts) into video genres (e.g., tutorial, gaming, vlog).'
   /tools/predict-youtube-views:
     post:
-      summary: Predict video views from features
+      summary: YouTube View Prediction
       requestBody:
         content:
           application/json:
@@ -570,9 +590,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Forecasts view counts using metadata features (title length, description length, word count, likes, comments, and presence of emojis or numbers).'
   /tools/youtube-comment-sentiment:
     post:
-      summary: Sentiment analysis on comments
+      summary: YouTube Comment Sentiment Analysis
       requestBody:
         content:
           application/json:
@@ -597,9 +618,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Evaluates viewer sentiment across a list of YouTube comment strings (texts).
   /tools/youtube-channel-keywords:
     post:
-      summary: Extract channel keywords
+      summary: Channel Keyword Extraction
       requestBody:
         content:
           application/json:
@@ -624,9 +646,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Discovers high-traffic keywords and search terms from a collection of channel video texts (texts).
   /tools/youtube-trend-detection:
     post:
-      summary: Detect channel trends
+      summary: Channel Performance Trend Detection
       requestBody:
         content:
           application/json:
@@ -651,9 +674,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Detects growth or deceleration trends across historic YouTube metrics (dataPoints).
   /tools/youtube-forecast:
     post:
-      summary: Forecast channel growth
+      summary: YouTube Channel Growth Forecasting
       requestBody:
         content:
           application/json:
@@ -678,9 +702,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Projects future YouTube subscriber or view growth from historical metric sequences (dataPoints).
   /tools/youtube-anomaly-detection:
     post:
-      summary: Detect view anomalies
+      summary: YouTube View Anomaly Detection
       requestBody:
         content:
           application/json:
@@ -705,9 +730,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Flags sudden spikes or drops in view history (dataPoints) that deviate from expected channel baseline patterns.
   /tools/youtube-thumbnail-comparison:
     post:
-      summary: Compare two thumbnails
+      summary: YouTube Thumbnail A/B Comparison
       requestBody:
         content:
           application/json:
@@ -732,9 +758,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Compares two thumbnail image URLs (imageUrl1, imageUrl2) to evaluate visual differences and suggest the more engaging option.'
   /tools/youtube-topic-clustering:
     post:
-      summary: Cluster videos by topic
+      summary: YouTube Video Topic Clustering
       requestBody:
         content:
           application/json:
@@ -759,9 +786,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Clusters video titles/transcripts (texts) into thematic groupings using semantic similarity.
   /tools/analyze-instagram-images:
     post:
-      summary: Analyze post images
+      summary: Instagram Feed Image Analysis
       requestBody:
         content:
           application/json:
@@ -786,9 +814,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Examines a batch of post images (imageUrls) to evaluate aesthetic consistency, dominant objects, and quality.'
   /tools/predict-instagram-engagement:
     post:
-      summary: Predict post engagement
+      summary: Instagram Post Engagement Prediction
       requestBody:
         content:
           application/json:
@@ -813,9 +842,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Predicts post engagement scores based on caption length, hashtag count, emoji count, and baseline interaction metrics (likes, comments, shares).'
   /tools/classify-instagram-content:
     post:
-      summary: Classify post content
+      summary: Instagram Content Classification
       requestBody:
         content:
           application/json:
@@ -840,9 +870,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Categorizes Instagram post caption text into thematic niches (e.g., fitness, lifestyle, travel, business).'
   /tools/instagram-caption-sentiment:
     post:
-      summary: Caption sentiment analysis
+      summary: Instagram Caption Sentiment Analysis
       requestBody:
         content:
           application/json:
@@ -867,9 +898,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Detects the sentiment and brand tone conveyed in an Instagram caption text.
   /tools/instagram-hashtag-extraction:
     post:
-      summary: Extract hashtags
+      summary: Instagram Hashtag Discovery
       requestBody:
         content:
           application/json:
@@ -894,9 +926,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Analyzes post strings (texts) to extract relevant existing hashtags or recommend high-engagement topical tags.
   /tools/instagram-visual-trends:
     post:
-      summary: Detect visual trends
+      summary: Visual Trend Detection
       requestBody:
         content:
           application/json:
@@ -921,9 +954,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Analyzes a series of image URLs (imageUrls) over time to detect shifts in visual style, filters, or aesthetic trends.'
   /tools/instagram-follower-forecast:
     post:
-      summary: Forecast follower growth
+      summary: Instagram Follower Growth Forecast
       requestBody:
         content:
           application/json:
@@ -948,9 +982,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Projects future Instagram follower counts based on historical follower logs (dataPoints).
   /tools/instagram-anomaly-detection:
     post:
-      summary: Detect engagement anomalies
+      summary: Instagram Engagement Anomaly Detection
       requestBody:
         content:
           application/json:
@@ -975,9 +1010,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Pinpoints anomalous spikes or dips in historic post interaction counts (dataPoints).
   /tools/instagram-post-comparison:
     post:
-      summary: Compare two post visuals
+      summary: Visual Post Comparison
       requestBody:
         content:
           application/json:
@@ -1002,9 +1038,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Compares two Instagram post images (imageUrl1, imageUrl2) for visual similarity, composition, and aesthetic quality.'
   /tools/instagram-content-clustering:
     post:
-      summary: Cluster content themes
+      summary: Instagram Content Clustering
       requestBody:
         content:
           application/json:
@@ -1029,9 +1066,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Groups a collection of post captions (texts) into distinct thematic pillars.
   /tools/analyze-tiktok-thumbnails:
     post:
-      summary: Analyze video thumbnails
+      summary: TikTok Video Cover Analysis
       requestBody:
         content:
           application/json:
@@ -1056,9 +1094,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Evaluates a series of TikTok video cover thumbnails (imageUrls) for hook potential and visual clarity.
   /tools/predict-tiktok-virality:
     post:
-      summary: Predict video virality
+      summary: TikTok Virality Prediction
       requestBody:
         content:
           application/json:
@@ -1083,9 +1122,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Estimates viral potential based on video title, description, duration, hashtag/emoji count, views, likes, comments, and shares.'
   /tools/classify-tiktok-content:
     post:
-      summary: Classify video content
+      summary: TikTok Content Categorization
       requestBody:
         content:
           application/json:
@@ -1110,9 +1150,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Classifies a set of TikTok captions or transcripts (texts) into video categories (e.g., comedy, life-hack, dance, review).'
   /tools/tiktok-content-sentiment:
     post:
-      summary: Content sentiment analysis
+      summary: TikTok Content Sentiment Analysis
       requestBody:
         content:
           application/json:
@@ -1137,9 +1178,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Measures sentiment across TikTok caption and video transcript strings (texts).
   /tools/tiktok-trending-topics:
     post:
-      summary: Extract trending topics
+      summary: TikTok Trending Topic Extraction
       requestBody:
         content:
           application/json:
@@ -1164,9 +1206,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Analyzes current video captions (texts) to identify emerging viral topics and trending concepts.
   /tools/tiktok-view-patterns:
     post:
-      summary: Detect view patterns
+      summary: TikTok View Pattern Detection
       requestBody:
         content:
           application/json:
@@ -1191,9 +1234,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Identifies cyclical or plateau patterns within historic video view counts (dataPoints).
   /tools/tiktok-follower-forecast:
     post:
-      summary: Forecast follower growth
+      summary: TikTok Follower Growth Forecast
       requestBody:
         content:
           application/json:
@@ -1218,9 +1262,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Predicts future follower trajectory using historic account follower totals (dataPoints).
   /tools/tiktok-anomaly-detection:
     post:
-      summary: Detect engagement anomalies
+      summary: TikTok Engagement Anomaly Detection
       requestBody:
         content:
           application/json:
@@ -1245,9 +1290,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Detects irregular view or engagement surges and drops across video metric timelines (dataPoints).
   /tools/tiktok-thumbnail-comparison:
     post:
-      summary: Compare two thumbnails
+      summary: TikTok Thumbnail Comparison
       requestBody:
         content:
           application/json:
@@ -1272,9 +1318,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Compares two video cover images (imageUrl1, imageUrl2) to evaluate framing and clickability.'
   /tools/tiktok-content-clustering:
     post:
-      summary: Cluster video content
+      summary: TikTok Content Clustering
       requestBody:
         content:
           application/json:
@@ -1299,9 +1346,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Partitions video caption/concept texts (texts) into cohesive sub-genre clusters.
   /tools/twitter-content-keywords:
     post:
-      summary: Analyze tweet content keywords
+      summary: Tweet Keyword Analysis
       requestBody:
         content:
           application/json:
@@ -1326,9 +1374,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Analyzes a collection of tweets (texts) to pull out prominent keywords, acronyms, and buzzwords.'
   /tools/predict-twitter-engagement:
     post:
-      summary: Predict tweet engagement
+      summary: Tweet Engagement Prediction
       requestBody:
         content:
           application/json:
@@ -1353,9 +1402,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Forecasts retweets and likes based on character count, links, mentions, hashtags, question marks, and initial engagement.'
   /tools/classify-twitter-topics:
     post:
-      summary: Classify tweet topics
+      summary: Tweet Topic Classification
       requestBody:
         content:
           application/json:
@@ -1380,9 +1430,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Categorizes tweet messages (texts) into standard conversational topics (e.g., tech, politics, sports, entertainment).'
   /tools/twitter-toxicity-detection:
     post:
-      summary: Detect toxic tweets
+      summary: Tweet Toxicity Detection
       requestBody:
         content:
           application/json:
@@ -1407,9 +1458,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Detects abusive, hostile, or toxic commentary within tweet strings (texts).'
   /tools/twitter-sentiment-analysis:
     post:
-      summary: Tweet sentiment analysis
+      summary: Tweet Sentiment Analysis
       requestBody:
         content:
           application/json:
@@ -1434,9 +1486,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Gauges community sentiment (positive, negative, neutral) across a collection of tweets (texts).'
   /tools/twitter-keyword-extraction:
     post:
-      summary: Extract tweet keywords
+      summary: Tweet Keyword Extraction
       requestBody:
         content:
           application/json:
@@ -1461,9 +1514,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Extracts key terms and phrases from a set of tweets (texts).
   /tools/twitter-follower-forecast:
     post:
-      summary: Forecast follower growth
+      summary: Twitter Follower Forecasting
       requestBody:
         content:
           application/json:
@@ -1488,9 +1542,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Predicts follower growth over future time periods based on historical follower logs (dataPoints).
   /tools/twitter-anomaly-detection:
     post:
-      summary: Detect engagement anomalies
+      summary: Twitter Engagement Anomaly Detection
       requestBody:
         content:
           application/json:
@@ -1515,9 +1570,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Identifies statistical outliers or engagement abnormalities across time-series tweet interaction data (dataPoints).
   /tools/twitter-tweet-comparison:
     post:
-      summary: Compare tweet similarity
+      summary: Tweet Similarity Comparison
       requestBody:
         content:
           application/json:
@@ -1542,9 +1598,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Compares two tweet strings (text1, text2) for semantic similarity, style, and tone.'
   /tools/twitter-topic-clustering:
     post:
-      summary: Cluster tweet topics
+      summary: Tweet Topic Clustering
       requestBody:
         content:
           application/json:
@@ -1569,9 +1626,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Discovers thematic discussion clusters across a broad dataset of tweets (texts).
   /tools/analyze-facebook-content:
     post:
-      summary: Analyze Facebook post content
+      summary: Facebook Post Content Analysis
       requestBody:
         content:
           application/json:
@@ -1596,9 +1654,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Analyzes the complete post context including the written message (message) and optional image URL (imageUrl).
   /tools/predict-facebook-engagement:
     post:
-      summary: Predict post engagement
+      summary: Facebook Engagement Prediction
       requestBody:
         content:
           application/json:
@@ -1623,9 +1682,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Predicts reactions, comments, and shares using post parameters (message length, word count, links, hashtags, emojis, impressions).'
   /tools/classify-facebook-topics:
     post:
-      summary: Classify post topics
+      summary: Facebook Topic Classification
       requestBody:
         content:
           application/json:
@@ -1650,9 +1710,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Classifies Facebook post texts (texts) into business, news, personal, community, or promotional topics.'
   /tools/facebook-comment-sentiment:
     post:
-      summary: Comment sentiment analysis
+      summary: Facebook Comment Sentiment Analysis
       requestBody:
         content:
           application/json:
@@ -1677,9 +1738,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Evaluates the sentiment score and tone of a Facebook post comment (text).
   /tools/facebook-post-keywords:
     post:
-      summary: Extract post keywords
+      summary: Post Keyword Extraction
       requestBody:
         content:
           application/json:
@@ -1704,9 +1766,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Extracts essential keywords and recurring themes from a list of post captions (texts).
   /tools/facebook-posting-trends:
     post:
-      summary: Detect posting trends
+      summary: Posting Trend Detection
       requestBody:
         content:
           application/json:
@@ -1731,9 +1794,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Analyzes cadence and historic posting frequency (dataPoints) to determine whether page posting velocity is rising or falling.
   /tools/facebook-growth-forecast:
     post:
-      summary: Forecast page growth
+      summary: Facebook Page Growth Forecasting
       requestBody:
         content:
           application/json:
@@ -1758,9 +1822,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Forecasts future fan/page follower counts based on historical data series (dataPoints).
   /tools/facebook-anomaly-detection:
     post:
-      summary: Detect engagement anomalies
+      summary: Facebook Engagement Anomaly Detection
       requestBody:
         content:
           application/json:
@@ -1785,9 +1850,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Identifies unusual spikes or drops in page reach or engagement data (dataPoints).
   /tools/facebook-visual-comparison:
     post:
-      summary: Compare post visuals
+      summary: Visual Comparison for Posts
       requestBody:
         content:
           application/json:
@@ -1812,9 +1878,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Compares two post graphic assets (imageUrl1, imageUrl2) to evaluate visual similarities.'
   /tools/facebook-content-clustering:
     post:
-      summary: Cluster post content
+      summary: Content Pillar Clustering
       requestBody:
         content:
           application/json:
@@ -1839,9 +1906,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Groups Facebook post messages (texts) into distinct category clusters.
   /tools/discord-sentiment-analysis:
     post:
-      summary: Message sentiment analysis
+      summary: Discord Message Sentiment Analysis
       requestBody:
         content:
           application/json:
@@ -1866,9 +1934,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Determines member sentiment and community mood across chat messages (texts).
   /tools/discord-toxicity-detection:
     post:
-      summary: Detect toxic messages
+      summary: Discord Toxicity Detection
       requestBody:
         content:
           application/json:
@@ -1893,9 +1962,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Flags harassment, toxicity, or violation-prone language across server chat messages (texts).'
   /tools/predict-discord-engagement:
     post:
-      summary: Predict message engagement
+      summary: Discord Engagement Prediction
       requestBody:
         content:
           application/json:
@@ -1920,9 +1990,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Predicts message engagement (reactions and replies) based on message length, emojis, and mentions.'
   /tools/classify-discord-topics:
     post:
-      summary: Classify message topics
+      summary: Discord Topic Classification
       requestBody:
         content:
           application/json:
@@ -1947,9 +2018,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Categorizes channel conversations (texts) into discussion topics (e.g., support, gaming, off-topic).'
   /tools/discord-keyword-extraction:
     post:
-      summary: Extract keywords
+      summary: Discord Keyword Extraction
       requestBody:
         content:
           application/json:
@@ -1974,9 +2046,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Extracts common keywords and slang terms actively used across channel message histories (texts).
   /tools/discord-activity-patterns:
     post:
-      summary: Detect activity patterns
+      summary: Server Activity Pattern Detection
       requestBody:
         content:
           application/json:
@@ -2001,9 +2074,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Analyzes historical message frequency (dataPoints) to identify peak usage windows and cyclical lulls.
   /tools/discord-growth-forecast:
     post:
-      summary: Forecast growth
+      summary: Discord Member Growth Forecast
       requestBody:
         content:
           application/json:
@@ -2028,9 +2102,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Projects future member growth numbers using historic member count logs (dataPoints).
   /tools/discord-anomaly-detection:
     post:
-      summary: Detect anomalies
+      summary: Discord Server Anomaly Detection
       requestBody:
         content:
           application/json:
@@ -2055,9 +2130,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Detects irregular activity spikes (such as raid events or unexpected dormancy) within message volume data (dataPoints).
   /tools/discord-channel-comparison:
     post:
-      summary: Compare two channels
+      summary: Discord Channel Comparison
       requestBody:
         content:
           application/json:
@@ -2082,9 +2158,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Compares the conversation style and message content between two separate channels (texts1 vs texts2).
   /tools/discord-member-clustering:
     post:
-      summary: Cluster members by activity
+      summary: Member Activity Clustering
       requestBody:
         content:
           application/json:
@@ -2109,9 +2186,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Segments community members into activity cohorts (e.g., lurkers, power users) based on message count, reaction count, and active days.'
   /tools/analyze-twitch-content:
     post:
-      summary: Analyze stream content
+      summary: Stream Content Analysis
       requestBody:
         content:
           application/json:
@@ -2136,9 +2214,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Evaluates stream titles, tags, and descriptive markers (texts) to gauge stream focus and appeal.'
   /tools/predict-twitch-viewers:
     post:
-      summary: Predict viewer count
+      summary: Twitch Viewer Count Prediction
       requestBody:
         content:
           application/json:
@@ -2163,9 +2242,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Estimates expected concurrent viewership based on stream title length, game popularity score, broadcast duration, and follower count.'
   /tools/classify-twitch-games:
     post:
-      summary: Classify game content
+      summary: Twitch Game & Content Classification
       requestBody:
         content:
           application/json:
@@ -2190,9 +2270,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Classifies stream descriptions (texts) into game genres (e.g., FPS, MOBA, Just Chatting).'
   /tools/twitch-chat-sentiment:
     post:
-      summary: Chat sentiment analysis
+      summary: Twitch Chat Sentiment Analysis
       requestBody:
         content:
           application/json:
@@ -2217,9 +2298,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Computes real-time viewer sentiment from a stream's chat log entries (texts).
   /tools/twitch-keyword-extraction:
     post:
-      summary: Extract keywords
+      summary: Twitch Keyword & Emote Extraction
       requestBody:
         content:
           application/json:
@@ -2244,9 +2326,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Extracts high-frequency keywords, meme terms, and emote references from chat or stream logs (texts).'
   /tools/twitch-viewer-trends:
     post:
-      summary: Detect viewer trends
+      summary: Viewer Trend Detection
       requestBody:
         content:
           application/json:
@@ -2271,9 +2354,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Determines whether concurrent viewership is trending up, stabilizing, or dropping from timeline metrics (dataPoints).'
   /tools/twitch-growth-forecast:
     post:
-      summary: Forecast growth
+      summary: Channel Growth Forecast
       requestBody:
         content:
           application/json:
@@ -2298,9 +2382,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Forecasts channel growth (views or followers) based on historical time-series entries (dataPoints).
   /tools/twitch-anomaly-detection:
     post:
-      summary: Detect anomalies
+      summary: Viewer Anomaly Detection
       requestBody:
         content:
           application/json:
@@ -2325,9 +2410,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Detects abnormal dips or spikes in viewer count (dataPoints), such as raids or viewer drop-offs.'
   /tools/twitch-clip-comparison:
     post:
-      summary: Compare two clips
+      summary: Twitch Clip Comparison
       requestBody:
         content:
           application/json:
@@ -2352,9 +2438,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Compares metadata/transcription of two clips (text1, text2) for topical or tone similarity.'
   /tools/twitch-stream-clustering:
     post:
-      summary: Cluster streams
+      summary: Stream Clustering
       requestBody:
         content:
           application/json:
@@ -2379,9 +2466,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Groups streams into content and format clusters using descriptive stream texts (texts).
   /tools/reddit-sentiment-analysis:
     post:
-      summary: Post sentiment analysis
+      summary: Reddit Post & Comment Sentiment Analysis
       requestBody:
         content:
           application/json:
@@ -2406,9 +2494,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Analyzes community sentiment across Reddit submissions or comments (texts).
   /tools/reddit-toxicity-detection:
     post:
-      summary: Detect toxic posts
+      summary: Reddit Toxicity Detection
       requestBody:
         content:
           application/json:
@@ -2433,9 +2522,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Detects hostile, toxic, or subreddit-rule-violating comments/posts (texts).'
   /tools/predict-reddit-engagement:
     post:
-      summary: Predict post engagement
+      summary: Reddit Post Engagement Prediction
       requestBody:
         content:
           application/json:
@@ -2460,9 +2550,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Predicts upvote and comment performance using title length, body length, upvote ratio, comment counts, and awards.'
   /tools/classify-reddit-topics:
     post:
-      summary: Classify post topics
+      summary: Reddit Topic Classification
       requestBody:
         content:
           application/json:
@@ -2487,9 +2578,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Categorizes Reddit submission texts (texts) into topical subjects and subreddit themes.
   /tools/reddit-keyword-extraction:
     post:
-      summary: Extract keywords
+      summary: Reddit Keyword Extraction
       requestBody:
         content:
           application/json:
@@ -2514,9 +2606,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Extracts dominant keywords, jargon, and common talking points from Reddit discussions (texts).'
   /tools/reddit-trend-detection:
     post:
-      summary: Detect trends
+      summary: Subreddit Trend Detection
       requestBody:
         content:
           application/json:
@@ -2541,9 +2634,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Analyzes chronological score or activity metrics (dataPoints) to detect rising discussions or declining trends.
   /tools/reddit-growth-forecast:
     post:
-      summary: Forecast growth
+      summary: Subreddit Subscriber Forecast
       requestBody:
         content:
           application/json:
@@ -2568,9 +2662,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Forecasts subscriber or active member count trajectory from historical records (dataPoints).
   /tools/reddit-anomaly-detection:
     post:
-      summary: Detect anomalies
+      summary: Reddit Engagement Anomaly Detection
       requestBody:
         content:
           application/json:
@@ -2595,9 +2690,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Identifies unexpected engagement anomalies or brigading spikes in metric streams (dataPoints).
   /tools/reddit-post-comparison:
     post:
-      summary: Compare two posts
+      summary: Reddit Post Comparison
       requestBody:
         content:
           application/json:
@@ -2622,9 +2718,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Compares the text content, formatting, and angle of two posts (text1, text2).'
   /tools/reddit-community-clustering:
     post:
-      summary: Cluster community posts
+      summary: Community Post Clustering
       requestBody:
         content:
           application/json:
@@ -2649,9 +2746,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Groups community submissions (texts) into distinct topical clusters to identify sub-communities.
   /tools/linkedin-sentiment-analysis:
     post:
-      summary: Post sentiment analysis
+      summary: LinkedIn Post Sentiment Analysis
       requestBody:
         content:
           application/json:
@@ -2676,9 +2774,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Analyzes professional tone and positive/negative sentiment across LinkedIn post bodies (texts).
   /tools/predict-linkedin-engagement:
     post:
-      summary: Predict engagement
+      summary: LinkedIn Engagement Prediction
       requestBody:
         content:
           application/json:
@@ -2703,9 +2802,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Predicts post engagement (likes, comments) using post length, hashtags, external links, image count, and initial reactions.'
   /tools/classify-linkedin-topics:
     post:
-      summary: Classify post topics
+      summary: LinkedIn Topic Classification
       requestBody:
         content:
           application/json:
@@ -2730,9 +2830,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Categorizes post text (texts) into professional domains (e.g., leadership, hiring, career advice, tech).'
   /tools/linkedin-keyword-extraction:
     post:
-      summary: Extract keywords
+      summary: LinkedIn Keyword Extraction
       requestBody:
         content:
           application/json:
@@ -2757,9 +2858,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Extracts industry-specific terminology, skills, and business buzzwords from post updates (texts).'
   /tools/linkedin-trend-detection:
     post:
-      summary: Detect trends
+      summary: LinkedIn Trend Detection
       requestBody:
         content:
           application/json:
@@ -2784,9 +2886,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Evaluates whether engagement on a company page or profile is trending upward or downward over historical series (dataPoints).
   /tools/linkedin-growth-forecast:
     post:
-      summary: Forecast growth
+      summary: LinkedIn Follower Growth Forecast
       requestBody:
         content:
           application/json:
@@ -2811,9 +2914,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Forecasts future follower growth from historical page follower totals (dataPoints).
   /tools/linkedin-anomaly-detection:
     post:
-      summary: Detect anomalies
+      summary: LinkedIn Anomaly Detection
       requestBody:
         content:
           application/json:
@@ -2838,9 +2942,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Flags unusual spikes or drop-offs in post impressions or interactions (dataPoints).
   /tools/linkedin-post-comparison:
     post:
-      summary: Compare two posts
+      summary: Post Copy Comparison
       requestBody:
         content:
           application/json:
@@ -2865,9 +2970,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Compares two LinkedIn updates (text1, text2) for professional framing, length, and style.'
   /tools/linkedin-content-clustering:
     post:
-      summary: Cluster content
+      summary: Professional Content Clustering
       requestBody:
         content:
           application/json:
@@ -2892,9 +2998,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Groups a set of professional updates (texts) into thematic content categories.
   /tools/linkedin-audience-segmentation:
     post:
-      summary: Analyze audience
+      summary: B2B Audience Segmentation
       requestBody:
         content:
           application/json:
@@ -2919,9 +3026,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Classifies and segments audience segments based on industry, seniority level, and company size attributes.'
   /tools/threads-sentiment-analysis:
     post:
-      summary: Post sentiment analysis
+      summary: Threads Sentiment Analysis
       requestBody:
         content:
           application/json:
@@ -2946,9 +3054,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Evaluates the sentiment score of short-form conversational posts (texts).
   /tools/threads-toxicity-detection:
     post:
-      summary: Detect toxic posts
+      summary: Threads Toxicity Detection
       requestBody:
         content:
           application/json:
@@ -2973,9 +3082,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Flags inflammatory or toxic posts within Threads discussions (texts).
   /tools/predict-threads-engagement:
     post:
-      summary: Predict engagement
+      summary: Threads Engagement Prediction
       requestBody:
         content:
           application/json:
@@ -3000,9 +3110,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Estimates expected replies and likes based on character count, emoji presence, and early interactions.'
   /tools/classify-threads-topics:
     post:
-      summary: Classify post topics
+      summary: Threads Topic Classification
       requestBody:
         content:
           application/json:
@@ -3027,9 +3138,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Categorizes short-form Threads posts (texts) into topical categories.
   /tools/threads-keyword-extraction:
     post:
-      summary: Extract keywords
+      summary: Threads Keyword Extraction
       requestBody:
         content:
           application/json:
@@ -3054,9 +3166,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Pulls trending keywords and conversational tags from a list of post bodies (texts).
   /tools/threads-trend-detection:
     post:
-      summary: Detect trends
+      summary: Threads Trend Detection
       requestBody:
         content:
           application/json:
@@ -3081,9 +3194,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Identifies positive or negative momentum across time-series Threads metrics (dataPoints).
   /tools/threads-growth-forecast:
     post:
-      summary: Forecast growth
+      summary: Threads Follower Growth Forecast
       requestBody:
         content:
           application/json:
@@ -3108,9 +3222,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Projects future follower totals based on past performance logs (dataPoints).
   /tools/threads-anomaly-detection:
     post:
-      summary: Detect anomalies
+      summary: Threads Engagement Anomaly Detection
       requestBody:
         content:
           application/json:
@@ -3135,9 +3250,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Identifies statistical outliers in Threads interaction metrics (dataPoints).
   /tools/threads-post-comparison:
     post:
-      summary: Compare two posts
+      summary: Threads Post Comparison
       requestBody:
         content:
           application/json:
@@ -3162,9 +3278,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Evaluates textual similarity and phrasing between two short posts (text1, text2).'
   /tools/threads-content-clustering:
     post:
-      summary: Cluster content
+      summary: Threads Content Clustering
       requestBody:
         content:
           application/json:
@@ -3189,9 +3306,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Groups conversational updates (texts) into thematic discussion threads.
   /tools/bluesky-sentiment-analysis:
     post:
-      summary: Post sentiment analysis
+      summary: Bluesky Sentiment Analysis
       requestBody:
         content:
           application/json:
@@ -3216,9 +3334,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Gauges community sentiment across posts published on the AT Protocol / Bluesky (texts).
   /tools/bluesky-toxicity-detection:
     post:
-      summary: Detect toxic posts
+      summary: Bluesky Toxicity Detection
       requestBody:
         content:
           application/json:
@@ -3243,9 +3362,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Analyzes Bluesky post strings (texts) to identify toxic or abusive content.
   /tools/predict-bluesky-engagement:
     post:
-      summary: Predict engagement
+      summary: Bluesky Engagement Prediction
       requestBody:
         content:
           application/json:
@@ -3270,9 +3390,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Forecasts reposts, likes, and replies based on post length, word count, and engagement baseline.'
   /tools/classify-bluesky-topics:
     post:
-      summary: Classify post topics
+      summary: Bluesky Topic Classification
       requestBody:
         content:
           application/json:
@@ -3297,9 +3418,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Classifies Bluesky skeletal feed posts (texts) into interest categories.
   /tools/bluesky-keyword-extraction:
     post:
-      summary: Extract keywords
+      summary: Bluesky Keyword Extraction
       requestBody:
         content:
           application/json:
@@ -3324,9 +3446,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Extracts key terms and topics currently under discussion across feed posts (texts).
   /tools/bluesky-trend-detection:
     post:
-      summary: Detect trends
+      summary: Bluesky Trend Detection
       requestBody:
         content:
           application/json:
@@ -3351,9 +3474,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Detects velocity and direction of metric timelines (dataPoints) on Bluesky feeds.
   /tools/bluesky-growth-forecast:
     post:
-      summary: Forecast growth
+      summary: Bluesky Growth Forecast
       requestBody:
         content:
           application/json:
@@ -3378,9 +3502,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Predicts follower or interaction trends using historic data points (dataPoints).
   /tools/bluesky-anomaly-detection:
     post:
-      summary: Detect anomalies
+      summary: Bluesky Anomaly Detection
       requestBody:
         content:
           application/json:
@@ -3405,9 +3530,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Finds sudden unusual fluctuations in post interactions or follow rates (dataPoints).
   /tools/bluesky-post-comparison:
     post:
-      summary: Compare two posts
+      summary: Bluesky Post Comparison
       requestBody:
         content:
           application/json:
@@ -3432,9 +3558,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Compares two post bodies (text1, text2) for similarity and message structure.'
   /tools/bluesky-content-clustering:
     post:
-      summary: Cluster content
+      summary: Bluesky Content Clustering
       requestBody:
         content:
           application/json:
@@ -3459,9 +3586,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Groups feeds and posts (texts) into distinct semantic topic clusters.
   /tools/mastodon-sentiment-analysis:
     post:
-      summary: Status sentiment analysis
+      summary: Mastodon Status Sentiment Analysis
       requestBody:
         content:
           application/json:
@@ -3486,9 +3614,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Evaluates the sentiment of federated statuses/toots (texts).
   /tools/mastodon-toxicity-detection:
     post:
-      summary: Detect toxic statuses
+      summary: Mastodon Toxicity Detection
       requestBody:
         content:
           application/json:
@@ -3513,9 +3642,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Scans decentralized statuses (texts) for offensive language or toxicity.
   /tools/predict-mastodon-engagement:
     post:
-      summary: Predict engagement
+      summary: Mastodon Engagement Prediction
       requestBody:
         content:
           application/json:
@@ -3540,9 +3670,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Predicts boost, favorite, and reply activity based on status length and initial counts.'
   /tools/classify-mastodon-topics:
     post:
-      summary: Classify status topics
+      summary: Mastodon Topic Classification
       requestBody:
         content:
           application/json:
@@ -3567,9 +3698,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Classifies fediverse statuses (texts) into subject categories (e.g., FOSS, privacy, news).'
   /tools/mastodon-keyword-extraction:
     post:
-      summary: Extract keywords
+      summary: Mastodon Keyword Extraction
       requestBody:
         content:
           application/json:
@@ -3594,9 +3726,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Extracts prominent keywords and terminology from federated post texts (texts).
   /tools/mastodon-trend-detection:
     post:
-      summary: Detect trends
+      summary: Mastodon Trend Detection
       requestBody:
         content:
           application/json:
@@ -3621,9 +3754,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Identifies trends across chronological engagement metrics (dataPoints).
   /tools/mastodon-growth-forecast:
     post:
-      summary: Forecast growth
+      summary: Mastodon Growth Forecast
       requestBody:
         content:
           application/json:
@@ -3648,9 +3782,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Forecasts account or instance follower growth based on historical data series (dataPoints).
   /tools/mastodon-anomaly-detection:
     post:
-      summary: Detect anomalies
+      summary: Mastodon Anomaly Detection
       requestBody:
         content:
           application/json:
@@ -3675,9 +3810,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Spots irregular traffic spikes or federation drops from time-series metrics (dataPoints).
   /tools/mastodon-status-comparison:
     post:
-      summary: Compare two statuses
+      summary: Mastodon Status Comparison
       requestBody:
         content:
           application/json:
@@ -3702,9 +3838,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Compares two federated status texts (text1, text2) for semantic parity.'
   /tools/mastodon-content-clustering:
     post:
-      summary: Cluster content
+      summary: Mastodon Content Clustering
       requestBody:
         content:
           application/json:
@@ -3729,9 +3866,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Partitions status texts (texts) into thematic fediverse discussion clusters.
   /tools/github-issue-sentiment:
     post:
-      summary: Issue sentiment analysis
+      summary: GitHub Issue Sentiment Analysis
       requestBody:
         content:
           application/json:
@@ -3756,9 +3894,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Gauges developer sentiment and urgency across issue bodies or pull request descriptions (texts).
   /tools/classify-github-issues:
     post:
-      summary: Classify issue topics
+      summary: GitHub Issue Classification
       requestBody:
         content:
           application/json:
@@ -3783,9 +3922,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Automatically tags and categorizes issues (texts) into types like bug report, feature request, documentation, or question.'
   /tools/github-keyword-extraction:
     post:
-      summary: Extract keywords
+      summary: Repository & Issue Keyword Extraction
       requestBody:
         content:
           application/json:
@@ -3810,9 +3950,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Extracts error codes, technical libraries, and key terms from issue reports (texts).'
   /tools/github-trend-detection:
     post:
-      summary: Detect trends
+      summary: Repo Trend Detection
       requestBody:
         content:
           application/json:
@@ -3837,9 +3978,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Evaluates star, fork, or issue resolution trends from time-series logs (dataPoints).'
   /tools/github-growth-forecast:
     post:
-      summary: Forecast growth
+      summary: GitHub Star/Traffic Forecast
       requestBody:
         content:
           application/json:
@@ -3864,9 +4006,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Forecasts repository growth (stars, forks, or views) based on historic trend lines (dataPoints).'
   /tools/github-anomaly-detection:
     post:
-      summary: Detect anomalies
+      summary: GitHub Activity Anomaly Detection
       requestBody:
         content:
           application/json:
@@ -3891,9 +4034,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Flags unusual spikes or valleys in commit activity, star counts, or issue creations (dataPoints).'
   /tools/github-repo-comparison:
     post:
-      summary: Compare two repos
+      summary: GitHub Repository Comparison
       requestBody:
         content:
           application/json:
@@ -3918,9 +4062,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Compares documentation/readme strings between two projects (texts1 vs texts2) to evaluate functional overlap.
   /tools/github-issue-clustering:
     post:
-      summary: Cluster issues
+      summary: Issue Report Clustering
       requestBody:
         content:
           application/json:
@@ -3945,9 +4090,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Groups issue titles and descriptions (texts) into clusters to highlight duplicate bugs and related feature sets.
   /tools/predict-github-issue-engagement:
     post:
-      summary: Predict issue engagement
+      summary: GitHub Issue Engagement Prediction
       requestBody:
         content:
           application/json:
@@ -3972,9 +4118,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Predicts developer response and discussion volume based on issue title length, body length, labels, and comment count.'
   /tools/github-contributor-patterns:
     post:
-      summary: Analyze contributor patterns
+      summary: Contributor Pattern Analysis
       requestBody:
         content:
           application/json:
@@ -3999,9 +4146,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Evaluates contributor impact and rhythm using commit count, additions, deletions, and active days.'
   /tools/spotify-track-sentiment:
     post:
-      summary: Analyze track mood/sentiment
+      summary: Spotify Track Mood & Sentiment Analysis
       requestBody:
         content:
           application/json:
@@ -4026,9 +4174,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Derives musical mood (valence, emotional tone) from audio feature vectors (danceability, energy, valence, tempo, loudness, etc.).'
   /tools/spotify-genre-classification:
     post:
-      summary: Classify genre from audio features
+      summary: Audio Feature Genre Classification
       requestBody:
         content:
           application/json:
@@ -4053,9 +4202,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Classifies audio characteristics (danceability, energy, tempo, acousticness, etc.) into musical genres.'
   /tools/predict-spotify-popularity:
     post:
-      summary: Predict track popularity
+      summary: Spotify Popularity Prediction
       requestBody:
         content:
           application/json:
@@ -4080,9 +4230,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Predicts track popularity score from acoustic and production features (tempo, energy, danceability, loudness).'
   /tools/spotify-audio-keywords:
     post:
-      summary: Extract audio keywords
+      summary: Audio Descriptor Keyword Extraction
       requestBody:
         content:
           application/json:
@@ -4107,9 +4258,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Generates descriptive tags and mood keywords (e.g., "upbeat", "acoustic", "melancholic") based on acoustic audio parameters.'
   /tools/spotify-trend-detection:
     post:
-      summary: Detect music trends
+      summary: Music Streaming Trend Detection
       requestBody:
         content:
           application/json:
@@ -4134,9 +4286,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Analyzes stream counts or chart position vectors (dataPoints) to determine whether a track is rising or declining.
   /tools/spotify-growth-forecast:
     post:
-      summary: Forecast growth
+      summary: Spotify Stream & Follower Growth Forecast
       requestBody:
         content:
           application/json:
@@ -4161,9 +4314,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Projects future artist follower or monthly listener metrics based on historical logs (dataPoints).
   /tools/spotify-anomaly-detection:
     post:
-      summary: Detect anomalies
+      summary: Streaming Anomaly Detection
       requestBody:
         content:
           application/json:
@@ -4188,9 +4342,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Identifies unnatural spikes or drops in daily play counts or playlist saves (dataPoints).
   /tools/spotify-track-comparison:
     post:
-      summary: Compare two tracks
+      summary: Audio Track Comparison
       requestBody:
         content:
           application/json:
@@ -4215,9 +4370,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Compares the complete audio feature profiles of two individual tracks (track1, track2) to measure musical similarity.'
   /tools/spotify-playlist-clustering:
     post:
-      summary: Cluster playlist tracks
+      summary: Playlist Track Clustering
       requestBody:
         content:
           application/json:
@@ -4242,9 +4398,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Groups a collection of track feature objects (tracks) into cohesive mood or genre clusters.
   /tools/spotify-audio-analysis:
     post:
-      summary: Deep audio feature analysis
+      summary: Deep Audio Analysis
       requestBody:
         content:
           application/json:
@@ -4269,9 +4426,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Performs in-depth feature modeling on core acoustic metrics (danceability, energy, valence, tempo, loudness, speechiness, liveness).'
   /tools/analyze-pinterest-images:
     post:
-      summary: Analyze pin images
+      summary: Pin Image Aesthetic Analysis
       requestBody:
         content:
           application/json:
@@ -4296,9 +4454,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Evaluates pin visuals (imageUrls) for visual composition, vertical orientation, and aesthetic appeal.'
   /tools/predict-pinterest-engagement:
     post:
-      summary: Predict pin engagement
+      summary: Pin Engagement Prediction
       requestBody:
         content:
           application/json:
@@ -4323,9 +4482,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Forecasts pin saves and clicks using title length, description length, external links, and board follower reach.'
   /tools/classify-pinterest-content:
     post:
-      summary: Classify pin content
+      summary: Pin Content Classification
       requestBody:
         content:
           application/json:
@@ -4350,9 +4510,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Categorizes pin text (text) into Pinterest categories (e.g., home decor, recipes, fashion, DIY).'
   /tools/pinterest-keyword-extraction:
     post:
-      summary: Extract keywords
+      summary: Pin Keyword Extraction
       requestBody:
         content:
           application/json:
@@ -4377,9 +4538,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Extracts search-intent keywords and SEO tags from pin titles/descriptions (texts).
   /tools/pinterest-trend-detection:
     post:
-      summary: Detect trends
+      summary: Pinterest Search & Save Trend Detection
       requestBody:
         content:
           application/json:
@@ -4404,9 +4566,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Detects seasonal spikes or declining interest trends from pin engagement time-series data (dataPoints).
   /tools/pinterest-growth-forecast:
     post:
-      summary: Forecast growth
+      summary: Pinterest Follower Growth Forecast
       requestBody:
         content:
           application/json:
@@ -4431,9 +4594,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Projects future board or profile follower growth using past historical metrics (dataPoints).
   /tools/pinterest-anomaly-detection:
     post:
-      summary: Detect anomalies
+      summary: Pin Engagement Anomaly Detection
       requestBody:
         content:
           application/json:
@@ -4458,9 +4622,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Identifies statistical outliers or viral surges in historic pin metric streams (dataPoints).
   /tools/pinterest-pin-comparison:
     post:
-      summary: Compare two pins
+      summary: Pin Copy Comparison
       requestBody:
         content:
           application/json:
@@ -4485,9 +4650,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Compares the text titles and descriptions of two pins (text1, text2) for search relevance and keyword overlap.'
   /tools/pinterest-board-clustering:
     post:
-      summary: Cluster boards
+      summary: Pin Board Clustering
       requestBody:
         content:
           application/json:
@@ -4512,9 +4678,10 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: Clusters Pinterest board objects (boards) into overarching aesthetic or niche lifestyle groupings.
   /tools/pinterest-audience-analysis:
     post:
-      summary: Analyze audience
+      summary: Pinterest Demographic & Interest Analysis
       requestBody:
         content:
           application/json:
@@ -4539,6 +4706,7 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ErrorResponse'
+      description: 'Analyzes audience target segments using age range (ageRange), gender, location, and interest tags.'
 components:
   schemas:
     SentimentResponse:
