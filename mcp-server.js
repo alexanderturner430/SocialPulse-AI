@@ -549,7 +549,14 @@ app.post("/mcp/messages", async (req, res) => {
   const sessionId = new URL(req.url, "http://localhost").searchParams.get("sessionId");
   const sseTransport = sessionId ? sseTransports.get(sessionId) : undefined;
   if (!sseTransport) return res.status(400).send("Bad Request: missing or invalid sessionId");
-  await sseTransport.handlePostMessage(req, res);
+  try {
+    await sseTransport.handlePostMessage(req, res);
+  } catch (err) {
+    console.error(`Error in handlePostMessage for session ${sessionId}:`, err);
+    if (!res.headersSent) {
+      res.status(500).send("Internal Server Error");
+    }
+  }
 });
 
 const jsonParser = express.json({ limit: "2mb" });
